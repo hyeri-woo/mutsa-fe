@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI 카드 만들기 with aspect-ratio advanced</title>
+    <style>
+        body {
+            margin: 100px;
+        }
+        .wrap-card {
+            color: #29363D;
+            width: 288px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .wrap-head {
+            padding: 19px 16px;
+            overflow: hidden;
+        }
+
+        .wrap-head img {
+            width: 40px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            vertical-align: top;
+            border-radius: 100%;
+            float: left;
+        }
+
+        .head-text {
+            float: right;
+            margin-bottom: -10px;
+            margin-right: 40px;
+            margin-top: 5px;
+        }
+
+        .head-text h2 {
+            font-size: 16px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;   
+            margin: 0px -10px;
+        }
+
+        .head-text p {
+            font-size: 12px;
+            color: #5A6A72;
+            margin: 0px -10px;
+
+        }
+        .wrap-card > img {
+            width: 100%;
+            aspect-ratio: 288/196;
+            object-fit: cover;
+            vertical-align: top;
+        }
+        
+        .wrap-text {
+            padding: 24px 16px 0px;
+        }
+
+        .wrap-text p {
+            font-size: 12px;
+            color: #5a6a72;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-all;
+            margin: -5px 0 16px;
+            line-height: 20px;
+        }
+
+        .wrap-bottom {
+            padding: 0px 16px;
+            /* overflow: hidden; */
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .wrap-bottom a {
+            color: #29363D;
+            font-size: 14px;
+            font-weight: bold;
+            padding-left: 6px;
+            /* float: left; */
+        }
+
+        .wrap-bottom span {
+            font-weight: bold;
+            margin: 0px 20px 0px;
+        }
+
+        .wrap-bottom p {
+            font-weight: bold;
+            float: left;
+        }
+
+        .wrap-bottom img {
+            width: 30px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            vertical-align: middle;
+        }
+
+        .wrap-bottom :nth-child(3) {
+            margin-left: 60px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>UI 카드 만들기 with aspect-ratio advanced</h1>
+    <div class="wrap-card">
+        <div class="wrap-head">
+            <img src="img/weniv-binky.png" alt="위니브 캐릭터">
+            <div class="head-text">
+                <h2>그것을 피가 청춘을 것이다</h2>
+            <p>secondary</p>
+            </div>
+        </div>
+        <img src="img/thumbnail.png" alt="썸네일"/>
+        <div class="wrap-text">
+            <p>청춘의 하였으며, 이것은 몸이 때문이다. 사는가 고동을 용기가 충분히 청춘 것이다, 얼마나 반짝이는 소담스러운 청춘이 있던가</p>
+        </div>
+        <div class="wrap-bottom">
+            <a href="https://www.naver.com/">Read</a> <span>></span>
+            <img src="img/icon-heart.png">
+            <img src="img/icon-share.png">
+            <img src="img/icon-more.png">
+        </div>
+    </div>
+
+    
+
+</body>
+</html>
