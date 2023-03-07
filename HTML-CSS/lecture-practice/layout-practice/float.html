@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 만들기: float만 사용</title>
+    <style>
+        .container {
+            background-color: #456EA5;
+            padding: 5px;
+            margin: 10px 10%;
+            width: 600px;
+            box-sizing: border-box;
+        }
+
+        .container::after{
+            content:'';
+            display:block;
+            clear:left;
+        }
+
+        .container > * {
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin: 1%;
+        }
+
+        header {
+            background-color: #96CAF2;
+            width: calc(100% - 2%);
+            height: 100px;
+            line-height: 100px;
+        }
+
+        section {
+            background-color: #485472;
+            width: calc(60% - 2%);
+            height: 300px;
+            float: left;
+            line-height: 300px;
+        }
+
+        aside {
+            background-color: #C6F543;
+            width: calc(40% - 2%);
+            height: 300px;
+            float: right;
+            line-height: 300px;
+        }
+
+        footer {
+            background-color: #FE7869;
+            width: calc(100% - 2%);
+            height: 100px;
+            float: left;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>header</header>
+        <section>section</section>
+        <aside>aside</aside>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>
