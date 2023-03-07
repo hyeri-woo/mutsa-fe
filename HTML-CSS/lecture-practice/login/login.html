@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="normalize.css"> 
+    <style>
+        @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+        * { 
+            font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+        }
+        .a11y-hidden {
+            clip: rect(1px, 1px, 1px, 1px);
+            clip-path: inset(50%);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+        }
+        .container {
+            background-color: white;
+            width: 350px;
+            height: 120px;
+            margin: auto;
+            padding: 18px 16px;
+            border: 1px solid #DBDBDB;
+            border-radius: 5px;
+        }
+        h2 {
+            font-size: 12px;
+            margin-bottom: 16px;
+            font-weight: 300;
+        }
+
+        .login-button {
+            display: inline-block;
+            width: 100%;
+            height: 40px;
+            background-color: #711BFF;
+            color: white;
+            border-radius: 4px;
+            text-align: center;
+            margin-bottom: 20px;   
+        }
+        .login-button img {
+            width: 90px;
+            vertical-align: middle;
+            margin-bottom: 5px;
+        }
+
+        .login-button span {
+            line-height: 40px;
+        }
+
+        .wrap-float {
+            
+            font-size: 12px;
+        }
+
+        .wrap-float a {
+            text-decoration: none;
+            color: #767676;
+        }
+
+        .wrap-float::after{
+            content:'';
+            display:block;
+            clear:left;
+        }
+
+        .find-id {
+            float: left;
+        }
+
+        .sign-up {
+            float: right;
+        }
+
+        .wrap-float img {
+            width: 15px;
+            object-fit: cover;
+            vertical-align: middle;
+            margin-bottom: 3px;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <h1 class="a11y-hidden">로그인 만들기</h1>
+    <div class="container">
+        <h2>더 편리해진 위니브에 오신것을 환영합니다.</h2>
+        <a class="login-button">
+            <img src="img/weniv-logo.png" alt="위니브 로고">
+            <span>로그인</span>
+        </a>
+        <div class="wrap-float">
+            <a class="find-id" href="#">
+                <img src="img/icon-lock.png" alt="아이콘 자물쇠">
+                <span>아이디 | 비밀번호찾기</span>
+            </a>
+            <a class="sign-up" href="#">
+                <img src="img/icon-user.png" alt="아이콘 유저">
+                <span>회원가입</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
