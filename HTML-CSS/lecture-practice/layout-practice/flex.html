@@ -10,6 +10,8 @@
             background:#ddd;
             width:350px;
             height:300px;
+            display: flex;
+            justify-content: space-between;
         }
 
         .box{
@@ -18,11 +20,19 @@
             color:#fff;
             text-align:center;
             line-height:50px;
-            font-weight:bold;
+            font-weight:bold; 
         }
 
-        .left-side {
-            flex-direction: row;
+        .left-side,
+        .center,
+        .right-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .right-side {
+            flex-direction: column-reverse;
         }
 
         .blue{background:royalblue;}
@@ -39,7 +49,7 @@
     <div class="wrap">
         <div class="left-side">
             <div class="box blue">A</div>
-            <div class="box pink">B</div>
+            <div class="box pink">B</div> 
             <div class="box yellow">C</div>
         </div>
         <div class="center">
