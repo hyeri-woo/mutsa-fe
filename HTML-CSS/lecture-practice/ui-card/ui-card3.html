@@ -9,6 +9,16 @@
         body {
             margin: 100px;
         }
+        .a11y-hidden {
+            clip: rect(1px, 1px, 1px, 1px);
+            clip-path: inset(50%);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+        }
         .wrap-card {
             color: #29363D;
             width: 288px;
@@ -115,7 +125,7 @@
     </style>
 </head>
 <body>
-    <h1>UI 카드 만들기 with aspect-ratio advanced</h1>
+    <h1 class="a11y-hidden">UI 카드 만들기 with aspect-ratio advanced</h1>
     <div class="wrap-card">
         <div class="wrap-head">
             <img src="img/weniv-binky.png" alt="위니브 캐릭터">
