@@ -1,0 +1,157 @@
+/* reset */
+body {
+    background-color: #fffaf0; 
+    margin: 0;
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+/* --------------- form-related --------------- */
+.label-style, 
+.input-style {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-style {
+    border-width: 0 0 1px 0;
+    border-color: #677880;
+    padding: 0 16px;
+    border-radius: 4px 4px 0 0;
+    height: 48px;
+    font-size: 16px;
+}
+
+.input-style:hover {
+    border-color: #2e6ff2;
+    border-bottom-width: 2px;
+    transition: border 0.2s;
+}
+
+.input-style:focus {
+    outline: none;
+    border: 2px solid #2e6ff2;
+}
+
+.label-style {
+    font-size: 14px;
+    color: #29363d;
+    margin-bottom: 8px;
+}
+
+/* --------------- layout --------------- */
+/* header */
+header {
+    background: white;
+}
+
+.header-wrap {
+    width: 1224px;
+    height: 120px;
+    max-width: calc(100% - 60px);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-logo {
+    height: 75px;
+}
+
+.welcome {
+    display: inline-block;
+}
+
+.welcome strong {
+    box-shadow: inset 0 -0.6em rgba(255, 79, 110, 0.5);
+}
+
+@media (min-width: 541px) {
+    .welcome::after {
+        content: "|";
+        color: #d8ddde;
+        margin-left: 24px;
+    }
+}
+
+@media (max-width : 540px) {
+    .welcome {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+    }
+}
+
+/* a-button */
+.btn-join,
+.btn-login,
+.btn-logout {
+    display: inline-block;
+    padding: 1em 1em 1em 1.5em;
+    text-decoration: none;
+    color: #5a6a72;
+}
+
+.btn-join {
+    background: url("../img/icon-join.svg") no-repeat 0 center / 1.5em;
+}
+
+.btn-login {
+    background: url("../img/icon-login.svg") no-repeat 0 center / 1.5em;
+}
+
+.btn-logout {
+    background: url("../img/icon-logout.svg") no-repeat 0 center / 1.5em;
+}
+
+/* button */
+
+.black-btn {
+    display: block;
+    width: 100%;
+    height: 48px;
+    background: #29363d;
+    color: white;
+    border: 0;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 0;
+}
+
+.black-btn:not(:disabled) {
+    cursor: pointer;
+}
+
+.black-btn:disabled {
+    opacity: 0.5;
+}
+
+/* title */
+.img-title {
+    text-align: center;
+    font-size: 24px;
+}
+
+.img-title img {
+    display: block;
+    height: 120px;
+    margin: auto;
+    margin-bottom: 29px;
+}
+
+.img-title .line {
+    box-shadow: inset 0 -0.6em rgba(255, 79, 110, 0.2);
+    border-bottom: 2px solid #ff4f6e;
+}

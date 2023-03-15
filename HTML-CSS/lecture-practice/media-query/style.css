@@ -1,0 +1,88 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 100px auto;
+    padding: 0;
+    gap: 100px;
+}
+
+/* title */
+.title {
+    width: 612px;
+    flex-shrink: 0;
+}
+
+.title h1 {
+    font-size: 70px;
+    line-height: 90px;
+    font-weight: 400;
+}
+
+.title p {
+    font-size: 20px;
+    color: #47494D;
+    line-height: 30px;
+}
+
+/* menu */
+.menu {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+}
+
+.menu .menu-item {
+    display: block;
+    width: 486px;
+    height: 280px;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    position: relative;
+}
+
+.menu .menu-item::after {
+    content: "바로가기 >";
+    position: absolute;
+    display: block;
+    color: white;
+    font-size: 16px;
+    bottom: 30px;
+    right: 30px;
+}
+
+.menu .education {
+    background: url("./img/top.svg") no-repeat;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.menu .book {
+    background: url("./img/bottom.svg") no-repeat;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .menu {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 390px) {
+    .container {
+        flex-direction: column;
+    }
+    .menu {
+        flex-direction: column;
+    }
+    .title h1 {
+        font-size: 36px;
+        line-height: 45px;
+    }
+}
