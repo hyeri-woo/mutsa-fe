@@ -1,0 +1,336 @@
+body {
+    background: var(--bg-color);
+}
+
+/* ---------------- header ---------------- */
+header {
+    text-align: center;
+    /* 변동값  67px 18px */
+    margin-bottom: 67px;
+}
+
+header img {
+    /* 변동값 386px 166px */
+    width: 386px;
+}
+
+/* ---------------- main ---------------- */
+main {
+    margin-top: 60px;
+    width: 748px;
+}
+main section {
+    flex-basis: 360px;
+    height: 545px;
+    flex-shrink: 0;
+}
+
+.vending, .ready-money, .final-cart {
+    background: white;
+}
+
+/* ---------------- section: 밴딩 머신 */
+.vending {
+    padding: 31px 27px 28px;
+    box-sizing: border-box;
+}
+
+/* 음료수 가판대 */
+.drink-list {
+    align-items: center;
+    justify-items: center;
+}
+
+.drink-list li button {
+    position: relative;
+    width: 94px;
+    height: 130px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.drink-list li button:not(.sold-out button):hover {
+    outline: 3px solid var(--main-color);
+    transition: outline 0.3s;
+}
+
+.drink-list li button div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;;
+}
+
+.drink-list li:not(.sold-out) button div:active {
+    background: var(--main-dark-color);
+    opacity: 0.3;
+    /* box-shadow: inset 2px 2px 1px rgba(0, 0, 0, 0.3); */
+    transition: all 0.3s;
+}
+
+/* 품절 상품 */
+.drink-list .sold-out div {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.drink-list .sold-out div span {
+    display: block;
+    position: absolute;
+    width: 51px;
+    height: 27px;
+    top: 45%;
+    right: 20%;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 0 2px var(--bg-color);
+    line-height: 25px;
+    font-size: 1.4rem;
+    font-weight: 900;
+    transform: rotate(-18deg);
+    color: var(--bg-color);
+}
+
+.drink-list .sold-out div span::after {
+    content: "";
+    width: 45px;
+    height: 21px;
+    display: block;
+    position: absolute;
+    top: 12%;
+    left: 6%;
+    box-shadow: inset 0 0 0 2px var(--bg-color);
+}
+
+.drink-name {
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.drink-list li button img {
+    margin-top: 11px;
+    vertical-align: top;
+}
+
+.drink-list li button .drink-name {
+    margin: 6px auto;
+}
+
+.drink-list li button .price-tag {
+    width: 70px;
+    height: 22px;
+    color: white;
+    background: var(--main-color);
+    font-size: 1.2rem;
+    border-radius: 50px;
+    box-sizing: border-box;
+    padding-top: 2px;
+    margin: 0px auto 9px;
+}
+
+/* 음료수 결제대 */
+.left-over, 
+.btn-return, 
+.payment,
+.btn-payment, 
+.current-cart, 
+.btn-gain {
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1.3rem;
+} 
+
+.left-over {
+    background: var(--bg-color);
+    height: 32px;
+    font-size: 1.4rem;
+    padding: 5px 10px;
+}
+
+.left-over span {
+    font-size: 1.4rem;
+}
+
+.btn-return,
+.btn-payment {
+    height: 32px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn-return:hover, 
+.btn-payment:hover  {
+    outline: 3px solid var(--main-color);
+    transition: outline 0.3s;
+}
+
+.btn-return:active, 
+.btn-payment:active  {
+    background: var(--border-color);
+    transition: all 0.3s;
+}
+
+.payment {
+    height: 32px;
+    border: 1px solid var(--border-color);
+    padding: 6px 6px 7px;
+}
+
+.payment::placeholder {
+    color: var(--border-color);
+}
+
+.current-cart {
+    height: 106px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    padding-right: 8px;
+}
+
+.current-cart::-webkit-scrollbar {
+    height: 0px;
+    width: 10px;
+}
+.current-cart::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 3px solid transparent;
+}
+
+.cart-item {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 6px 10px 6px 8px;
+    margin-top: 6px;
+}
+
+.cart-item:first-child {
+    margin-top: 0px;
+}
+
+.cart-item img{
+    width: 18px;
+    aspect-ratio: 18px / 33px;
+}
+
+.cart-item .drink-name {
+    font-size: 0.9rem;
+}
+
+.cart-item .drink-count {
+    width: 30px;
+    height: 30px;
+    font-size: 1.4rem;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
+    padding-top: 3px;
+}
+
+.btn-gain {
+    background: var(--main-color);
+    color: white;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn-gain:hover {
+    outline: 3px solid var(--main-dark-color);
+    transition: outline 0.3s;
+}
+
+.btn-gain:active {
+    background: var(--main-dark-color);
+    color: var(--bg-color);
+    transition: all 0.3s;
+}
+
+
+@media(max-width: 390px) {
+    body {
+        background: white;
+    }
+
+    header img {
+        /* 변동값 386px 166px */
+        width: 166px;
+    }
+
+    main {
+        max-width: 390px;
+    }
+
+    .payment {
+        position: relative;
+    }
+
+    .payment::placeholder {
+        position: absolute;
+        right: 0;
+        margin-right: 6px;
+    }
+}
+
+/* ---------------- section: 영수증 */
+
+.ready-money {
+    background: white;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 9px 27px;
+    margin-bottom: 20px;
+}
+
+.ready-money p {
+    background: var(--bg-color);
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+.ready-money span {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.gained-drinks {
+    background: white;
+    height: calc(100% - 70px);
+    box-sizing: border-box;
+    text-align: center;
+    padding: 25px 27px;
+}
+
+.gained-drinks h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 13px
+}
+
+.gained-drinks .final-cart {
+    background: var(--bg-color);
+    box-sizing: border-box;
+    height: 364px;
+    padding: 12px;
+    padding-right: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.final-cart::-webkit-scrollbar {
+    height: 0px;
+    width: 10px;
+}
+.final-cart::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 3px solid transparent;
+}
+
+.total-price {
+    margin-top: 6px;
+    font-size: 1.2rem;
+}

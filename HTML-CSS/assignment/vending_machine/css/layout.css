@@ -1,0 +1,103 @@
+/* ---------------- main ---------------- */
+main {
+    display: flex;
+    /* 변동값 20px 0px */
+    gap: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ---------------- section: 밴딩 머신 */
+.vending {
+    display: grid;
+    grid-template-areas: 
+        "drink-list drink-list"
+        "left-over btn-return"
+        "payment btn-payment"
+        "current-cart btn-gain";
+    grid-template-columns: 2fr 1fr;
+    gap: 12px;
+}
+
+.drink-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-area: drink-list;
+    gap: 12px;
+}
+
+.left-over {
+    grid-area: left-over;
+}
+
+.left-over span {
+    float: right;
+}
+
+.btn-return {
+    grid-area: btn-return;
+}
+
+.payment {
+    grid-area: payment;
+}
+
+.btn-payment {
+    grid-area: btn-payment;
+}
+
+.current-cart {
+    grid-area: current-cart;
+    overflow: scroll;
+} 
+
+.btn-gain {
+    grid-area: btn-gain;
+}
+
+/* ---------------- section: 영수증 */
+.ready-money span {
+    float: right;
+}
+
+.total-price {
+    text-align: right;
+}
+
+.final-cart {
+    overflow: scroll;
+}
+
+/* ---------------- 공통 */
+[class$="cart"] .cart-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+[class$="cart"] .cart-item .drink-count {
+    margin-left: auto;
+}
+
+@media(max-width: 390px) {
+    main {
+        flex-direction: column;
+        gap: 0px;
+        position: static;
+        left: 0;
+        top: 0;
+        transform: translate(0, 0);
+    }
+}
+
+@media(max-height: 850px) {
+    main {
+        position: static;
+        left: 0;
+        top: 0;
+        transform: translate(0, 0);
+        margin: auto;
+    }
+}
