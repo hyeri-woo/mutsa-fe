@@ -10,22 +10,21 @@ main {
 }
 
 /* ---------------- section: 밴딩 머신 */
-.vending {
+.drink-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.counter {
     display: grid;
     grid-template-areas: 
-        "drink-list drink-list"
         "left-over btn-return"
         "payment btn-payment"
         "current-cart btn-gain";
     grid-template-columns: 2fr 1fr;
-    gap: 12px;
-}
-
-.drink-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-area: drink-list;
-    gap: 12px;
+    gap: 11px 12px;
+    margin-top: 20px;
 }
 
 .left-over {
