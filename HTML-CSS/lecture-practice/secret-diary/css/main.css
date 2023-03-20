@@ -116,6 +116,48 @@ p, h3 {
     margin-bottom: 76px;
 }
 
+.button-group {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 111px;
+    height: 40px;
+    background: white;
+    border: 1px solid #677880;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-group button {
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    padding: 0;
+    opacity: 0.6;
+    transition: opacity 0.3;
+}
+
+.button-group button:hover{
+    opacity: 1;
+}
+
+.button-group button img {
+    width: 100%;
+}
+
+.button-group span {
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    background: #d8ddde;
+    margin: 0 4px;
+}
+
 /* media query */
 @media (max-width: 1024px) {
     .container {
