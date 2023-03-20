@@ -65,8 +65,8 @@ main {
     text-align: right;
 }
 
-.final-cart {
-    overflow: scroll;
+.final-cart-wrapper {
+    overflow-y: scroll;
 }
 
 /* ---------------- 공통 */

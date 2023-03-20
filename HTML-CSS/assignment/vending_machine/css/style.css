@@ -24,7 +24,7 @@ main section {
     flex-shrink: 0;
 }
 
-.vending, .ready-money, .final-cart {
+.vending, .ready-money {
     background: white;
 }
 
@@ -308,21 +308,25 @@ main section {
     margin-bottom: 13px
 }
 
-.gained-drinks .final-cart {
+.final-cart-wrapper {
     background: var(--bg-color);
     box-sizing: border-box;
     height: 364px;
-    padding: 12px;
-    padding-right: 8px;
     border: 1px solid var(--border-color);
     border-radius: 5px;
+    padding: 12px;
+    padding-right: 8px;
 }
 
-.final-cart::-webkit-scrollbar {
+.final-cart {
+    min-height: 600px;
+}
+
+.final-cart-wrapper::-webkit-scrollbar {
     height: 0px;
     width: 10px;
 }
-.final-cart::-webkit-scrollbar-thumb {
+.final-cart-wrapper::-webkit-scrollbar-thumb {
     background-color: white;
     border-radius: 10px;
     background-clip: padding-box;
