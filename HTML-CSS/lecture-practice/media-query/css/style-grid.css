@@ -141,15 +141,24 @@
 
 @media (min-height: 820px) {
     body {
-        min-height:100vh;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 }
+
+@media (min-height: 820px) {
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    }
     
-/* @media (max-height: 819px) {
+    @media (max-height: 819px) {
     .container {
         margin: 40px auto;
     }
-} */
+    }

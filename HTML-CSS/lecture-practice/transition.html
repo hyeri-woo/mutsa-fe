@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+    <style>
+        .container {
+            display: flex;
+            gap: 50px;
+            margin: 50px;
+
+        }
+        .item {
+            width: 150px;
+            height: 150px;
+            background-color: royalblue;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition-property: all;
+        }
+
+        .duration {
+            transition-duration: 4s;
+        }
+
+        .timing {
+            transition-duration: 4s;
+            transition-timing-function: linear;
+        }
+
+        .delay {
+            transition-duration: 4s;
+            transition-delay: 2s;
+        }
+
+        [class~="item"]:hover {
+            background-color: navy;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">normal</div>
+        <div class="item duration">duration</div>
+        <div class="item timing">timing</div>
+        <div class="item delay">delay</div>
+    </div>
+</body>
+</html>
