@@ -22,56 +22,60 @@
             <h2 class="a11y-hidden">밴딩머신</h2>
             <!-- 음료수 리스트 -->
             <ul class="drink-list">
-                <li><button>
-                    <div></div>
+                <li class="drink-item selected">
+                    <div class="a11y-hidden"><span>품절</span></div>
                     <img src="./img/red.svg" alt="오리지널 콜라">
                     <p class="drink-name">Original_Cola</p>
                     <p class="price-tag">1000원</p>
-                </button></li>
-                <li class="sold-out"><button>
+                </li>
+                <li class="drink-item sold-out">
                     <div><span>품절</span></div>
                     <img src="./img/purple.svg" alt="보라 콜라">
                     <p class="drink-name">Violet_Cola</p>
                     <p class="price-tag">1000원</p>
-                </button></li>
-                <li><button>
-                    <div></div>
+                </li>
+                <li class="drink-item">
+                    <div class="a11y-hidden"><span>품절</span></div>
                     <img src="./img/yellow.svg" alt="노란 콜라">
                     <p class="drink-name">Yellow_Cola</p>
                     <p class="price-tag">1000원</p>
-                </button></li>
-                <li><button>
-                    <div></div>
+                </li>
+                <li class="drink-item">
+                    <div class="a11y-hidden"><span>품절</span></div>
                     <img src="./img/blue.svg" alt="시원한 콜라">
                     <p class="drink-name">Cool_Cola</p>
                     <p class="price-tag">1000원</p>
-                </button></li>
-                <li><button>
-                    <div></div>
+                </li>
+                <li class="drink-item selected">
+                    <div class="a11y-hidden"><span>품절</span></div>
                     <img src="./img/green.svg" alt="초록 콜라">
                     <p class="drink-name">Green_Cola</p>
                     <p class="price-tag">1000원</p>
-                </button></li>
-                <li><button>
-                    <div></div>
+                </li>
+                <li class="drink-item">
+                    <div class="a11y-hidden"><span>품절</span></div>
                     <img src="./img/orange.svg" alt="오렌지 콜라">
                     <p class="drink-name">Orange_Cola</p>
                     <p class="price-tag">1000원</p>
-                </button></li>
+                </li>
             </ul>
             <!-- 계산대 -->
-            <form class="counter">
+            <form class="left-over-form">
                 <!-- 잔액 표시 -->
-                <div class="left-over">
+                <p class="left-over">
                     잔액: <span>1,000원</span>
-                </div>
+                </p>
                 <!-- 거스름돈 반환 -->
                 <button class="btn-return" type="button">거스름돈 반환</button>
+            </form>
+            <form class="payment-form">
                 <!-- 입금액 입력 -->
                 <label class="a11y-hidden" for="payment-money">입금액 입력</label>
                 <input class="payment" id="payment-money" type="number" placeholder="입금액 입력" required>
                 <!-- 입금 버튼 -->
                 <button class="btn-payment" type="button">입금</button>
+            </form>
+            <form class="current-cart-form">
                 <!-- 현재 카트 -->
                 <ul class="current-cart">
                     <li class="cart-item">
@@ -122,7 +126,6 @@
                             <p class="drink-count">5</p>
                         </li>
                     </ul>   
-                    </ul>
                 </div>
                 <p class="total-price">총금액: 9,000원</p>
             </div>

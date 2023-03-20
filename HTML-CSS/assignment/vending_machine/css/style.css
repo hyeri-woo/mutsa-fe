@@ -15,8 +15,8 @@ header img {
 
 /* ---------------- main ---------------- */
 main {
-    margin-top: 60px;
     width: 748px;
+    margin: 60px auto;
 }
 main section {
     flex-basis: 360px;
@@ -38,34 +38,39 @@ main section {
 .drink-list {
     align-items: center;
     justify-items: center;
+    margin-bottom: 20px;
 }
 
-.drink-list li button {
+.drink-item {
     position: relative;
+    text-align: center;
     width: 94px;
     height: 130px;
     border-radius: 10px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
 
-.drink-list li button:not(.sold-out button):hover {
-    outline: 3px solid var(--main-color);
-    transition: outline 0.3s;
+.selected {
+    box-shadow: var(--main-color) 0px 0px 0px 3px;
 }
 
-.drink-list li button div {
+.drink-list li:not(.sold-out):hover {
+    box-shadow: var(--main-color) 0px 0px 0px 3px;
+    transition: box-shadow 0.3s;
+}
+
+.drink-item div {
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 10px;;
 }
 
-.drink-list li:not(.sold-out) button div:active {
+/* .drink-list li:not(.sold-out):active {
     background: var(--main-dark-color);
     opacity: 0.3;
-    /* box-shadow: inset 2px 2px 1px rgba(0, 0, 0, 0.3); */
     transition: all 0.3s;
-}
+} */
 
 /* 품절 상품 */
 .drink-list .sold-out div {
@@ -99,21 +104,21 @@ main section {
     box-shadow: inset 0 0 0 2px var(--bg-color);
 }
 
+/* 일반 음료수 상품 */
 .drink-name {
     color: var(--text-color);
     font-size: 0.9rem;
 }
 
-.drink-list li button img {
+.drink-item img {
     margin-top: 11px;
     vertical-align: top;
 }
-
-.drink-list li button .drink-name {
+.drink-item .drink-name {
     margin: 6px auto;
 }
 
-.drink-list li button .price-tag {
+.drink-item .price-tag {
     width: 70px;
     height: 22px;
     color: white;
@@ -139,6 +144,8 @@ main section {
 
 .left-over {
     background: var(--bg-color);
+    width: 200px;
+    flex-shrink: 0;
     height: 32px;
     font-size: 1.4rem;
     padding: 5px 10px;
@@ -151,14 +158,15 @@ main section {
 .btn-return,
 .btn-payment {
     height: 32px;
+    width: calc(100% - 200px);
     border: 1px solid var(--border-color);
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
 
 .btn-return:hover, 
 .btn-payment:hover  {
-    outline: 3px solid var(--main-color);
-    transition: outline 0.3s;
+    box-shadow: var(--main-color) 0px 0px 0px 3px;
+    transition: box-shadow 0.3s;
 }
 
 .btn-return:active, 
@@ -169,6 +177,8 @@ main section {
 
 .payment {
     height: 32px;
+    width: 200px;
+    flex-shrink: 0;
     border: 1px solid var(--border-color);
     padding: 6px 6px 7px;
 }
@@ -177,8 +187,16 @@ main section {
     color: var(--border-color);
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .current-cart {
     height: 106px;
+    width: 200px;
+    flex-shrink: 0;
     background: var(--bg-color);
     border: 1px solid var(--border-color);
     padding: 12px;
@@ -229,14 +247,15 @@ main section {
 }
 
 .btn-gain {
+    width: calc(100% - 200px);
     background: var(--main-color);
     color: white;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
 
 .btn-gain:hover {
-    outline: 3px solid var(--main-dark-color);
-    transition: outline 0.3s;
+    box-shadow: var(--main-dark-color) 0px 0px 0px 3px;
+    transition: box-shadow 0.3s;
 }
 
 .btn-gain:active {
@@ -246,7 +265,7 @@ main section {
 }
 
 
-@media(max-width: 390px) {
+@media(max-width: 768px) {
     body {
         background: white;
     }
@@ -257,7 +276,7 @@ main section {
     }
 
     main {
-        max-width: 390px;
+        max-width: 360px;
     }
 
     .payment {

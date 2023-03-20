@@ -16,45 +16,26 @@ main {
     gap: 12px;
 }
 
-.counter {
-    display: grid;
-    grid-template-areas: 
-        "left-over btn-return"
-        "payment btn-payment"
-        "current-cart btn-gain";
-    grid-template-columns: 2fr 1fr;
-    gap: 11px 12px;
-    margin-top: 20px;
+.left-over-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
 }
 
-.left-over {
-    grid-area: left-over;
+.payment-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
 }
 
-.left-over span {
-    float: right;
-}
-
-.btn-return {
-    grid-area: btn-return;
-}
-
-.payment {
-    grid-area: payment;
-}
-
-.btn-payment {
-    grid-area: btn-payment;
+.current-cart-form {
+    display: flex;
+    gap: 12px;
 }
 
 .current-cart {
-    grid-area: current-cart;
     overflow: scroll;
 } 
-
-.btn-gain {
-    grid-area: btn-gain;
-}
 
 /* ---------------- section: 영수증 */
 .ready-money span {
@@ -80,7 +61,7 @@ main {
     margin-left: auto;
 }
 
-@media(max-width: 390px) {
+@media(max-width: 768px) {
     main {
         flex-direction: column;
         gap: 0px;
