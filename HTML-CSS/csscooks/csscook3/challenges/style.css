@@ -9,6 +9,10 @@
 	*/
 }
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	background: var(--dark-purple);
 }
@@ -70,6 +74,12 @@ header h1::after {
 }
 
 /* media query */
+@media (max-width: 1080px) and (min-width: 851px) {
+	header h1 {
+		margin-left: 50px;
+	}
+}
+
 @media (max-width: 850px) {
 	header {
 		flex-direction: column;
@@ -78,16 +88,23 @@ header h1::after {
 	}
 	header h1 {
 		transform: translateX(100px);
-	}
-	header h1::after {
-		content: none;
+		margin-bottom: 20px;
 	}
 	header p {
-		width: 50%;
+		width: 70%;
+	}
+
+	header h1::after {
+		top: 65%;
+		left: 0;
+		width: 100px;
+		transform: translateX(0px);
+		border-bottom: 1px solid var(--light-purple);
 	}
 } 
 
-@media (max-width: 450px) {
+
+@media (max-width: 500px) {
 	header h1 {
 		font-size: 30px;
 	}
@@ -109,6 +126,7 @@ section:nth-child(even) {
 
 /* image-cover */
 [class$="cover"] {
+	min-width: 150px;
 	width: 26%;
 	display: flex;
 	justify-content: center;
@@ -160,22 +178,31 @@ section h3 {
 
 [class$="list"] {
 	color: #767675;
+	padding-left: 24px;
+	position: relative;
 }
 
-[class$="list"] li::before {
-	content: "\2022";
-	color: var(--light-purple);
-	font-weight: bold;
-	display: inline-block;
-	font-size: 40px;
-	vertical-align: middle;
-	margin-bottom: 7px;
-	margin-right: 10px;
+[class$="list"] li:not(:first-child) {
+	padding-top: 13px;
 	line-height: 20px;
 }
 
+[class$="list"] li {
+	line-height: 20px;
+}
+
+[class$="list"] li::before {
+	content: "";
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: var(--light-purple);
+	border-radius: 10px;
+	transform: translate(-20px, 5px);
+}
+
 /* media query */
-@media (max-width: 450px) {
+@media (max-width: 600px) {
 	section:nth-child(n) {
 		flex-direction: column;
 		margin-bottom: 30px;
