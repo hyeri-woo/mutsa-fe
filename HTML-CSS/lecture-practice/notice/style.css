@@ -1,0 +1,107 @@
+/* common */
+body, .notice-title, p, ul, li, a, .more-link {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.more-link {
+    color: inherit;
+    font: inherit;
+    border: none;
+    background: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+* {
+    font-family: 'Pretendard';
+}
+
+.notice-container {
+    width: 728px;
+    height: 272px;
+    margin: 100px auto;
+}
+
+.title-wrapper {
+    display: flex;
+    gap: 57px;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.title-wrapper .notice-title {
+    font-weight: 700;
+    font-size: 30px;
+    color: #29363D;
+}
+
+.title-wrapper p {
+    font-weight: 400;
+    font-size: 20px;    
+    color: #5A6A72;
+    position: relative;
+}
+
+.title-wrapper p:before {
+    content: "";
+    display: block; 
+    background: #c6c6c6;
+    width: 1px;
+    height: 10px;
+    margin-top: 10px;
+    position: absolute;
+    transform: translateX(-30px);
+    color: #959595;
+}
+
+.title-wrapper .more-link {
+    margin-left: auto;
+    margin-right: 16px;
+    color: #29363D;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.notice-list {
+    color: #29363D
+}
+
+.notice-list strong {
+    color: #2E6FF2;
+    font-weight: 700;
+    /* padding: 17px 5px 17px 16px; */
+    padding-right: 10px;
+    white-space: nowrap;
+}
+
+.notice-list li:first-child {
+    border-top: 1px solid #EEEEEE;
+}
+
+.notice-list li {
+    border-bottom: 1px solid #EEEEEE;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 16px;
+}
+
+.notice-list li .contents {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 17px 16px;
+}
+
+.notice-list li time {
+    padding-top: 17px;
+    padding-left: 51px;
+}

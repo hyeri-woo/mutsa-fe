@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커스텀 form 태그</title>
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body>
+    <div class="container">
+        <div class="checkbok-wrapper">
+            <input id="chk0" type="checkbox"> <label for="chk0">checkbox1</label>
+            <input class="custom-input" id="chk1" type="checkbox"> <label for="chk1">custom-input</label>
+            <input class="custom-input2" id="chk2" type="checkbox"> <label for="chk2">custom-input</label>
+        </div>
+        <div class="radio-wrapper">
+            <input id="radio0" name="radio" type="radio"> <label for="radio0">radio1</label>
+            <input class="custom-radio" id="radio1" name="radio" type="radio"> <label for="radio1">radio1</label>
+            <input class="custom-radio" id="radio2" name="radio" type="radio"> <label for="radio2">radio2</label>
+        </div>
+        <!-- JS로 active class 제어 -->
+        <div class="select-wrapper">
+            <select class="custom-select1">
+                <option>최애 프로그래밍 언어</option>
+                <option>Python</option>
+                <option>Java</option>
+                <option>JavaScript</option>
+                <option>C#</option>
+                <option>C/C++</option>
+            </select>
+            <div class="custom-select2 active">
+                <button type="button">최애 프로그래밍 언어</button>
+                <ul>
+                    <li><button type="button">Python</button></li>
+                    <li><button type="button">Java</button></li>
+                    <li><button type="button">JavaScript</button></li>
+                    <li><button type="button">C#</button></li>
+                    <li><button type="button">C/C++</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        let list = document.querySelector('.custom-select');
+
+        list.addEventListener('click', function(){
+            list.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
