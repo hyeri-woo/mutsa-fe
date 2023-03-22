@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 또는 회원가입</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="div-container">
+        <!-- header -->
+        <header>
+            <h1>로그인 또는 회원가입</h1>
+            <button class="btn-close" type="button"><img src="./img/icon-close.svg" alt="로그인 창 닫기 버튼"></button>
+        </header>
+        <!-- main -->
+        <main>
+            <section class="section-directLogin">
+                <h2 class="a11y-hidden">위니브를 통해 직접 로그인</h2>
+                <p class="p-title">위니브에서 여러분의 궁금증을 해결하세요! :&#41;</p>
+                <form class="form-directLogin">
+                    <fieldset class="module-input-id error">
+                        <label for="inputlId" class="label-id a11y-hidden">아이디를 입력해주세요</label>
+                        <input id="inputId" class="input-id" type="email" placeholder="아이디" required>
+                        <strong class="strong-error missingId">아이디를 입력해주세요.</strong>
+                    </fieldset>
+                    <fieldset class="module-input-pw error">
+                        <label for="inputPw" class="label-pw a11y-hidden">비밀번호 입력해주세요</label>
+                        <input id="inputPw" class="input-pw" type="password" placeholder="비밀번호" required>
+                        <strong class="strong-error notMatch">아이디 혹은 비밀번호과 일치하지 않습니다</strong>
+                    </fieldset>
+                    <input id="inputStaySignedIn" class="input-staySignedIn" type="checkbox">
+                    <label for="inputStaySignedIn" class="label-staySignedIn">로그인 상태 유지</label>
+                    <button type="submit" class="btn-login">로그인</button>
+                </form>
+                <div class="div-joinOrFind">
+                    <a class="anchor-join" href="#">회원가입</a>
+                    <span></span>
+                    <a class="anchor-findIdPw" href="#">아이디/비밀번호 찾기</a>
+                </div>
+            </section>
+            <section class="section-snsLogin">
+                <h2 class="a11y-hidden">SNS을 통한 간편 로그인</h2>
+                <p class="p-or">또는</p>
+                <ul class="ul-snsLogin">
+                    <li>
+                        <button type="submit" class="btn-google">구글 계정으로 로그인</button>
+                    </li>
+                    <li>
+                        <button type="submit" class="btn-facebook">페이스 계정으로 로그인</button>
+                    </li>
+                    <li> 
+                        <button type="submit" class="btn-naver">네이버 계정으로 로그인</button>
+                    </li>
+                    <li>
+                        <button type="submit" class="btn-kakao">카카오톡 계정으로 로그인</button>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

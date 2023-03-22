@@ -1,0 +1,230 @@
+/* common */
+:root {
+    --border-color: #C4C4C4;
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+/* reset */
+* {
+    box-sizing: border-box;
+    font-family: 'Spoqa Han Sans Neo';
+}
+
+h1, h2, p, form, input, label, button, a, ul, li, fieldset {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+fieldset, input {
+    border: none;
+    background: none;
+    font: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.div-container {
+    width: 520px;
+    margin: 100px auto;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+header {
+    position: relative;
+    padding: 20px 0 18px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center; 
+}
+
+.btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+    margin-right: 24px;
+}
+
+/* section: direct login */
+.section-directLogin {
+    padding: 26px 24px 30px;
+}
+
+.p-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.input-id, .input-pw {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 15px 16px;
+    /* margin-bottom: 10px; */
+    font-size: 16px;
+}
+
+.error .input-id {
+    border: 2px solid #F4492E;
+}
+
+.strong-error {
+    display: none;
+    color: #F4492E;
+    font-weight: 400;
+    margin: 6px 0 0 5px;
+}
+
+
+.error .strong-error {
+    display: block;
+}
+
+.input-pw {
+    margin-top: 10px;
+}
+
+.input-staySignedIn {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background: url(./img/icon-unchecked.svg) no-repeat center / 100%;
+    vertical-align: -5px;
+    cursor: pointer;
+}
+
+.input-staySignedIn:checked {
+    background: url(./img/icon-checked.svg) no-repeat center / 100%;
+}
+
+.label-staySignedIn {
+    display: inline-block;
+    margin-top: 13px;
+    cursor: pointer;
+}
+
+.label-staySignedIn {
+    color: #767676;
+    font-size: 16px;
+}
+
+.btn-login {
+    width: 100%;
+    color: white;
+    background: #2F80ED;
+    border-radius: 5px;
+    padding: 14px 0;
+    margin: 21px 0 20px;
+}
+
+.div-joinOrFind {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.div-joinOrFind span:after {
+    content: "|";
+    color: #767676;
+}
+
+.div-joinOrFind > a {
+    font-size: 14px;
+    color: #767676;
+}
+
+/* section: sns login */
+.section-snsLogin {
+    padding: 0px 24px 25px;
+}
+
+.p-or::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 45%;
+    height: 1px;
+    background: var(--border-color);
+    top: 45%;
+    left: 0;
+}
+
+.p-or {
+    color: #767676;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.p-or::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 45%;
+    height: 1px;
+    background: var(--border-color);
+    top: 45%;
+    right: 0;
+}
+
+.ul-snsLogin li button {
+    width: 100%;
+    color: #767676;
+    font-size: 16px;
+    padding: 15px 0;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn-google {
+    border: 1px solid #767676;
+    background: url(./img/icon-google.svg) no-repeat 15px 14px;
+}
+
+.btn-facebook {
+    border: 1px solid #2D9CDB;
+    background: url(./img/icon-facebook.svg) no-repeat 19px 13px;
+}
+
+.btn-naver {
+    border: 1px solid #00BF18;
+    background: url(./img/icon-naver.svg) no-repeat 15px 14px;
+}
+
+.btn-kakao {
+    border: 1px solid #F2C94C;
+    background: url(./img/icon-kakao.svg) no-repeat 15px 14px;
+}

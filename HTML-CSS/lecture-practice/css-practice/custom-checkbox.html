@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>custom checkbox</title>
+    <style>
+        /* 네이버에서 사용하는 숨기기 기능 */
+        .text-hide {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        .label-hold {
+            position: relative;
+            display: inline-block;
+            margin: 20px 0;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .label-hold::before {
+            content: "";
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            border: 1px solid black;
+            vertical-align: -5px;
+            margin-right: 10px;
+        }
+
+        .input-hold:focus-visible + .label-hold::before {
+            outline: 2px solid royalblue;
+
+        }
+
+        .label-hold::after {
+            position: absolute;
+            top: 0;
+            left: 24px;
+            content: "";
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            background: url(./img/checkmark.png) no-repeat 0 0 / cover;
+            transition: 0.3s ease;
+            opacity: 0;
+        }
+
+        .input-hold:checked + .label-hold::after {
+            left: 1px;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <input id="inputHold" class="input-hold text-hide" type="checkbox">
+    <label for="inputHold" class="label-hold">로그인 상태 유지</label>
+    <!-- 재현님의 네이밍 컨벤션: 형태-의미-상태 -->
+</body>
+</html>
