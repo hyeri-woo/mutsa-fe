@@ -126,8 +126,9 @@ section:nth-child(even) {
 
 /* image-cover */
 [class$="cover"] {
-	min-width: 150px;
-	width: 26%;
+	/* min-width: 150px; */
+	flex-basis: 26%;
+	flex-shrink: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -173,7 +174,10 @@ section h3 {
 	background: white;
 	padding: 24px;
 	font-size: 14px;
-	width: calc(100% - 26%);
+	/* width: calc(100% - 26%); */
+	/* flex-basis: 0; */
+	flex-grow: 1;
+	min-width: 0;
 }
 
 [class$="list"] {
@@ -209,11 +213,10 @@ section h3 {
 	}
 
 	[class$="cover"] {
-		width: 100%;
-		height: 250px;
+		flex-basis: 250px;
 	}
 
-	[class$="content"] {
+	/* [class$="content"] {
 		width: 100%;
-	}
+	} */
 }
