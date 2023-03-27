@@ -1,0 +1,43 @@
+ul li:hover {
+  background: white;
+  cursor: pointer;
+}
+ul li:last-child {
+  border: 2px solid black;
+}
+
+ol {
+  border: 1px solid black;
+}
+ol li:nth-child(1) {
+  color: red;
+}
+ol li:nth-child(2) {
+  color: green;
+}
+ol li:nth-child(3) {
+  color: blue;
+}
+
+.box-yellow {
+  background-color: yellow;
+}
+.box-green {
+  background-color: green;
+}
+.box-blue {
+  background-color: blue;
+}
+
+.one {
+  color: green;
+}
+.one .two {
+  color: blue;
+}
+.one .two .three {
+  color: purple;
+}
+.four {
+  color: red;
+}/*# sourceMappingURL=nesting.css.map */

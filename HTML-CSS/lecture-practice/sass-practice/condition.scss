@@ -1,0 +1,139 @@
+/* 조건문 if/else if/else ------------- */
+@mixin button($color) {
+    color: $color;
+    @if $color == black {
+        font-size: 32px;
+        background-color: white;
+    } @else if $color == white {
+        font-size: 24px;
+        background-color: black;
+    } @else if $color == green {
+        font-size: 24px;
+        background-color: black;
+    } @else {
+        font-size: 16px;
+        background-color: blue;
+    }
+}
+
+// 1. if 단독
+// 2. if / else
+// 3. if / elif / else
+// 4. if / elif / elif .... / else
+
+.btn {
+    @include button(red); // 파선아실
+}
+
+/* 다른 조건문 */
+$media-width-lg: 1000px;
+$media-width-md: 800px;
+$media-width-sm: 500px;
+
+$media-font-lg: 16px;
+$media-font-md: 14px;
+$media-font-sm: 12px;
+
+@mixin responsive($size) {
+    background-color: green;
+    width: 200px;
+    height: 200px;
+    font-size: $media-font-lg;
+    @if $size == lg {
+        @media screen and (max-width: $media-width-lg) {
+            width: 100px;
+            height: 100px;
+            font-size: $media-font-md;
+            @content;      
+        }
+    }
+    @else if $size == md {
+        @media screen and (max-width: $media-width-md) {
+            width: 100px;
+            height: 100px;
+            font-size: $media-font-md;
+            @content;      
+        }
+    }
+    @else if $size == sm {
+        @media screen and (max-width: $media-width-sm) {
+            width: 100px;
+            height: 100px;
+            font-size: $media-font-sm;       
+            @content;      
+        }
+    }
+    
+}
+
+.main {
+    @include responsive(lg){
+        color: red;
+    }
+}
+
+
+/* 반복문 for 문 */
+// for문을 이용해 nth-선택자에게 각각의 image를 배경에 넣어준다.
+@for $i from 1 through 5 {
+    .photo-box:nth-child(#{$i}) {
+        background-image: url("../assets/phoster#{$i}.png");
+    }
+} 
+  // 범위 1이상 5이하
+  // for문에서 1부터 5까지 반복하라는 의미입니다. 총 5번 반복되면서 코드가 실행된다.
+  // 만약 from 3 throught 8 이라면 3에서 8까지 6번 실행된다
+
+/* 반복문 each 문 */
+// color-palette 리스트에 들어있는 색상을 each문을 사용하여 background에 색상값을 넣어준다.
+$color-palette: #dad5d2 #3a3532 #375945 #5b8767 #a6c198 #dbdfc8;
+
+@each $color in $color-palette {
+    $i: index($color-palette, $color); //index는 list의 내장함수
+    .color-circle:nth-child(#{$i}) {
+        background: $color;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+}
+
+/* 반복문 while 문 */
+// color-palette 리스트에 들어있는 색상을 each문을 사용하여 background에 색상값을 넣어준다.
+$hojun: 5;
+@while $hojun > 1 {
+    $hojun: $hojun - 1;
+    .content-#{$hojun} {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+}
+
+// Scss - function
+// Sass 공식문서
+// 거듭제곱을 구하는 함수
+@function pow($base, $exponent) { 
+    $result: 1;
+    @for $_ from 1 through $exponent {
+      $result: $result * $base;
+    }
+    @return $result;
+}
+
+.sidebar {
+    float: left;
+    margin-left: pow(4, 3) * 1px;
+}
+
+@function unitCheck($x) {
+
+    // 단위체크
+    @if(type-of($x)==number) {
+        @if(unitless($x)) {
+            @return $x+px;
+        }
+    }
+
+    @return $x;
+}

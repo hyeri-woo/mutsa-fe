@@ -1,0 +1,121 @@
+/* mixin: 코드를 재사용하기 위해 만들어진 기능 */
+/* 기본 기능 -------------------------- */
+@mixin center-xy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    @include center-xy;
+}
+
+
+// 내부에서 사용할 수 있으나 사용하지 않기를 권장한다. 
+.box {
+    @mixin box {
+        width: 100px;
+        height: 100px;
+    }
+    @include box;
+}
+
+/* argumnet 추가 가능 -------------------------- */
+@mixin image-style($url, $size, $repeat, $positionX, $positionY) {
+    background-image: url($url);
+    background-size: $size;
+    background-repeat: $repeat;
+    background-position: $positionX $positionY;
+} 
+
+//background관련 스타일 코드가 들어있다.
+//mixin의 인수에 따라 조금씩 다른 스타일링이 가능하다.
+.profile {
+    @include image-style("./assets/user.jpg", cover, no-repeat, center, center);
+}
+
+.box-one {
+    @include image-style("/images/poster1.svg", cover, no-repeat, 40%, 50%);
+}
+
+/* argument에 기본값 설정 가능 -------------------------- */
+@mixin pri-button($width, $height, $radius:10px) {
+    width: $width;
+    height: $height;
+    border-radius: $radius;
+    background-color: aqua;
+}
+
+@mixin pri-button_($width:100px, $height:50px, $radius:10px) {
+    width: $width;
+    height: $height;
+    border-radius: $radius;
+    background-color: aqua;
+}
+
+.btn {
+    @include pri-button(100px, 50px, 20px)
+}
+
+.btn_ {
+    @include pri-button(100px, 50px)
+}
+
+.btn__ {
+    @include pri-button(100px, null, 20px)
+}
+
+.btn__ {
+    @include pri-button_(100px, null, 20px)
+}
+
+// 중앙값 비우기
+.btn__ {
+    @include pri-button_(100px, $radius:20px)
+}
+
+/* content -------------------------- */
+/* 원하는 부분에 스타일을 추가하여 전달할 수 있다. */
+@mixin sample{
+	display: flex;
+	justify-content : center;
+	align-items : center;
+    @content;
+}
+
+.one {
+    @include sample {
+        color:white;
+    }
+    background-color: red;
+}
+
+
+/* 실습 -------------------------- */
+@mixin flex-align($justify-content:center, $align-items:center) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin item-size($size:100px, $border-radius:10%) {
+    width: $size;
+    height: $size;
+    border-radius: $border-radius;
+}
+
+.card {
+    @include flex-align;
+}
+
+.card-item {
+    @include item-size;
+}
+
+.product {
+    @include flex-align(right, right);
+}
+
+.product-item {
+    @include item-size(200px, 20%);
+}

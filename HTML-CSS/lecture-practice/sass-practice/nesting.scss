@@ -1,0 +1,55 @@
+// 부모선택자_앰퍼센드 2
+ul {
+    li {
+        &:hover {
+            background: white;
+            cursor: pointer;
+        }
+        &:last-child {
+            border: 2px solid black;
+        }
+    }
+}
+
+ol {
+    border: 1px solid black;
+    li {
+        &:nth-child(1) {
+            color: red;
+        }
+        &:nth-child(2) {
+            color: green;
+        }
+        &:nth-child(3) {
+            color: blue;
+        }
+    }
+}
+
+// 부모선택자_엠퍼센드 3
+// .box-yellow = &-yellow
+.box {
+    &-yellow {
+        background-color: yellow;
+    }
+    &-green {
+        background-color: green;
+    }
+    &-blue {
+        background-color: blue;
+    }
+}
+
+// @at-root
+.one {
+    color: green;
+    .two {
+        color: blue;
+        .three {
+            color: purple;
+            @at-root .four {
+                color: red;
+            }
+        }
+    }
+}
