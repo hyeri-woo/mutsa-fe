@@ -1,0 +1,21 @@
+article {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.question, .result {
+    display: none;
+}
+
+#img {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.share {
+    margin: 0 auto;
+}
