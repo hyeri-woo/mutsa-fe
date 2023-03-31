@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <!-- header -->
     <header>
+        <!-- navigation -->
         <div class="nav-wrapper">
             <h1 id-="title"><a href="index.html"><img src="./img/logo.svg" alt="호두마켓"></a></h1>
             <nav>
@@ -22,6 +24,7 @@
             </nav>
             <button class="btn-nav"></button>
         </div>
+        <!-- section: header -->
         <section class="section-header">
             <div class="text-wrapper">
                 <h2>Lorem Ipsum is simply dummy text of the printing and</h2>
@@ -31,7 +34,9 @@
             <img src="./img/main-cat.png" alt="상자를 뒤집어 쓴 고양이">
         </section>
     </header>
+    <!-- main -->
     <main>
+        <!-- section: introduce -->
         <section class="section-introduce">
             <img src="./img/cat1.png" alt="누워있는 고양이 사진">
             <div class="text-wrapper">
@@ -39,35 +44,42 @@
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
             </div>
         </section>
+        <!-- section: middleText -->
         <section class="section-middleText">
             <h3>dummy text of the printing and dummy</h3>
             <p>Lorem Ipsum is simply <strong>dummy text</strong> of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown</p>
         </section>
+        <!-- section: img -->
         <section class="section-img">
             <img src="./img/cat2.png" alt="캣타워에 앉아있는 고양이 사진">
             <img src="./img/cat3.png" alt="벽을 바라보고 있는 고양이 사진">
             <img src="./img/cat4.png" alt="주인을 바라보고 있는 고양이 사진">
         </section>
+        <!-- section: learnMore -->
         <section class="section-learnMore">
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown Ipsum is simply dummy text of the printing and typesetting industry. </p>
             <button class="btn-learnMore" type="button">Learn More</button>
         </section>
     </main>
+    <!-- background-wrapper -->
     <div class="background-wrapper">
         <img src="./img/cat-bg.png" alt="">
+        <!-- subscribe -->
         <article class="article-subscribe">
             <div class="text-wrapper">
                 <h3>Subscribe to our Blog post</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p>
             </div>
-            <form class="form-subscribe">
+            <form class="form-subscribe" action="">
                 <input class="input-email" type="email" id="inputEmail" placeholder="Enter your mail address" required>
                 <label for="inputEmail" class="a11y-hidden">이메일을 입력해주세요.</label>
-                <button class="btn-subscribe" type="submit">Subscribe</button>
+                <button class="btn-subscribe" type="button">Subscribe</button>
             </form>
         </article>
     </div>
+    <!-- footer -->
     <footer>
+        <!-- footer: logo & sns -->
         <div class="sns-wrapper">
             <h2><a href="index.html"><img src="./img/logo.svg" alt="호두마켓"></a></h2>
             <ul class="list-sns">
@@ -77,6 +89,7 @@
                 <li><a href="#"><img src="./img/icon-youtube.png" alt="youtube"></a></li>
             </ul>
         </div>
+        <!-- footer: text list -->
         <ul class="list-footer">
             <li><a href="#">About</a></li>
             <li><a href="#">Blog</a></li>
@@ -84,22 +97,30 @@
             <li><a href="#">Terms of Use</a></li>
         </ul>
     </footer>
-    <article class="article-nav">
-        <button class="btn-close"></button>
-        <nav>
-            <ul class="list-top">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Support</a></li>
-                <li><button class="btn-download" type="button">Download</button></li>
-            </ul>
-        </nav>
-    </article>
-    <article class="article-modal">
-        <img src="./img/cat-face.png" alt="고양이 얼굴">
-        <h3>Thank You!</h3>`    
-        <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
-        <button class="btn-thank" type="button">Ok! I Love HODU</button>
-    </article>
+    <!-- article: navigation mobile version (on으로 처리) -->
+    <div class="nav-wrapper-mobile">
+        <article class="article-nav">
+            <button class="btn-close"></button>
+            <nav>
+                <ul class="list-top">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><button class="btn-download" type="button">Download</button></li>
+                </ul>
+            </nav>
+        </article>
+    </div>
+    <!-- article: modal (on으로 처리) -->
+    <div class="modal-wrapper">
+        <article class="article-modal">
+            <img src="./img/cat-face.png" alt="고양이 얼굴">
+            <h3>Thank You!</h3>  
+            <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
+            <button class="btn-close" type="button">Ok! I Love HODU</button>
+        </article>
+    </div>
+    <button class="btn-scroll" type="button"></button>
+    <script src="script.js"></script>
 </body>
 </html>

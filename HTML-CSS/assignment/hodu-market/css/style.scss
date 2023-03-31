@@ -3,6 +3,11 @@ $main-color:  #D97652;
 $light-orange: #F29D52;
 $navy-color: #263140;
 
+@mixin img-deco {
+    border-radius: 30px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+}
+
 /* reset */
 * { 
     font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
@@ -99,11 +104,10 @@ header {
 }
 
 .section-header {
-    padding: 200px 20px 0px;
+    padding: 32px 20px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // background: url("./img/main-cat.png") no-repeat right / contain;
     h2 {
         max-width: 720px;
         font-size: 48px;
@@ -124,6 +128,9 @@ header {
         .text-wrapper {
             padding-left: 30px;
         }
+        img {
+            width: min(50%, 415px);
+        }
     }
 }
 
@@ -142,8 +149,8 @@ header {
             padding: 0;
             width: 24px;
             height: 20px;
-            border-top: 2px solid #263140;
-            border-bottom: 2px solid  #263140;
+            border-top: 2px solid $navy-color;
+            border-bottom: 2px solid  $navy-color;
             border-radius: 0;
             position: relative;
             margin-right: 4px;
@@ -153,7 +160,8 @@ header {
             display: inline-block;
             position: absolute;
             width: 24px;
-            height: 1px;
+            height: 2px;
+            transform: translateY(-1px);
             background-color: #263140;
             left: 0;
         }
@@ -188,9 +196,10 @@ header {
     display: flex;
     justify-content: space-between;
     margin: auto;
-    padding: 80px 0 50px; 
+    padding: 80px 20px 50px; 
     align-items: center;
     img {
+        @include img-deco;
         max-width: 660px;
     }
     .text-wrapper {
@@ -227,10 +236,17 @@ header {
 }
 
 .section-img {
-    max-width: 1322px;
+    max-width: 1300px;
     margin: auto;
     white-space: nowrap;
-    overflow-x: scroll;
+    overflow: visible;
+    padding: 32px;
+    img {
+        @include img-deco;
+    }
+    img:not(:first-child) {
+        margin-left: 72px;
+    }
 }
 
 .section-learnMore {
@@ -254,9 +270,14 @@ header {
 /* ------------------------------- main-media */
 @include tablet {
     .section-introduce {
+        padding-left: 32px;
         img {
             width: 60%;
+            margin-right: 32px;
         }
+    }
+    .section-img {
+        overflow-x: scroll;
     }
     .section-learnMore {
         padding-bottom: 300px;
@@ -265,12 +286,13 @@ header {
 
 @include mobile {
     .section-introduce {
-        padding: 40px 0px 0px 20px;
+        padding: 40px 32px 0px;
         flex-direction: column;
         gap: 40px;
         text-align: center;
         img {
             width: 100%;
+            margin: 0;
         }
         h3 {
             font-size: 24px;
@@ -291,7 +313,6 @@ header {
         
     }
     .section-img {
-        padding: 0px 20px;
         img {
             width: 300px;
         }
@@ -352,12 +373,12 @@ header {
             display: inline-block;
             width: 20px;
             height: 16px;
-            background: #D97652;
             top: 23px;
             left: 30px;
-            background: url(../img/icon-mail.svg) no-repeat;
+            background: url(../img/icon-mail.svg) no-repeat 0 0 / contain;
         }
         .input-email {
+            color: black;
             font-size: 16px;
             width: 530px;
             padding: 20px 150px 20px 68px;
@@ -412,8 +433,10 @@ footer {
         justify-content: center;
         gap: 30px;
         .form-subscribe {
-            .input-email {
-                width: 100%;
+            width: 100%;
+            text-align: center;
+            &::before {
+                left: calc((100% - 530px) / 2 + 30px);
             }
         }
     }
@@ -429,11 +452,17 @@ footer {
             }
         }
         .form-subscribe {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
             &::before {
                 top: 13px;
                 left: 15px;
+                width: 15px;
+                height: 12px;
             }
             .input-email {
+                width: 100%;
                 padding: 12px 20px 12px 40px;
                 font-size: 12px;
             }
@@ -441,8 +470,6 @@ footer {
                 position: initial;
                 transform: none;
                 margin-top: 20px;
-                float: right;
-    
             }
         }
     }
@@ -472,9 +499,18 @@ footer {
 }
 
 /* ------------------------------- mobile nav */
-.article-nav {
+.nav-wrapper-mobile{
     display: none;
-    position: absolute;
+    position: fixed;
+    top:0; left: 0; bottom: 0; right: 0;
+    background: white;
+    &.on {
+        display: block;
+    }
+}
+
+.article-nav {
+    position: fixed;
     top: 0;
     right: 0;
     height: 100%;
@@ -516,9 +552,20 @@ footer {
     }
 }
 
+
+
 /* ------------------------------- modal */
-.article-modal {
+.modal-wrapper{
     display: none;
+    position: fixed;
+    top:0; left: 0; bottom: 0; right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    &.on {
+        display: block;
+    }
+}
+
+.article-modal {
     width: 600px;
     height: 400px;
     background: url(../img/modal-bg.png) no-repeat 0 0 / cover;
@@ -539,13 +586,12 @@ footer {
     }
     p {
         font-size: 14px;
-        margin-bottom: 38px;
+        margin-bottom: 30px;
     }
 }
 
 @include mobile {
     .article-modal {
-        // display: block;
         width: 300px;
         height: 300px;
         border-radius: 30px;
@@ -559,14 +605,46 @@ footer {
         transform: translateX(-50%);
         img {
             width: 60px;
-            margin-bottom: 10px;
         }
         h3 {
             font-size: 24px;
-            margin-bottom: 0px;
+            margin-bottom: 10px;
         }
         p {
-            margin-bottom: 28px;
+            margin-bottom: 23px;
         }
+    }
+}
+
+/* ------------------------------- button scroll */
+.btn-scroll {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 1px solid #C4C4C4;
+    border-radius: 25px;
+    padding: 0;
+    position: fixed;
+    bottom: 184px;
+    right: 40px;
+    &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top: 3px solid #C4C4C4;
+        border-left: 3px solid #C4C4C4;
+        transform: translate(-6px, -3px) rotate(45deg);
+    }
+    &:hover::after {
+        border-top: 3px solid #767676;
+        border-left: 3px solid #767676;
+    }
+}
+
+@include mobile {
+    .btn-scroll {
+        display: none;
     }
 }
