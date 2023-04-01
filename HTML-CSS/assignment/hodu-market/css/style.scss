@@ -1,3 +1,4 @@
+// variables
 @import "media";
 $main-color:  #D97652;
 $light-orange: #F29D52;
@@ -216,7 +217,7 @@ header {
 }
 
 .section-middleText {
-    max-width: 1280px;
+    // max-width: 1280px;
     margin: auto;
     text-align: center;
     padding: 80px 20px;
@@ -240,11 +241,11 @@ header {
     margin: auto;
     white-space: nowrap;
     overflow: visible;
-    padding: 32px;
+    padding: 32px 0px;
     img {
         @include img-deco;
     }
-    img:not(:first-child) {
+    img:not(:nth-child(2)) {
         margin-left: 72px;
     }
 }
@@ -277,6 +278,7 @@ header {
         }
     }
     .section-img {
+        padding-left: 32px;
         overflow-x: scroll;
     }
     .section-learnMore {
@@ -311,10 +313,13 @@ header {
             font-size: 14px;
         }
         
-    }
+    } 
     .section-img {
         img {
-            width: 300px;
+            width: 260px;
+        }
+        img:not(:first-child) {
+            margin-left: 20px;
         }
     }
     .section-learnMore {

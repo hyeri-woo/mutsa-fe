@@ -199,7 +199,6 @@ header {
 }
 
 .section-middleText {
-  max-width: 1280px;
   margin: auto;
   text-align: center;
   padding: 80px 20px;
@@ -223,13 +222,13 @@ header {
   margin: auto;
   white-space: nowrap;
   overflow: visible;
-  padding: 32px;
+  padding: 32px 0px;
 }
 .section-img img {
   border-radius: 30px;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
 }
-.section-img img:not(:first-child) {
+.section-img img:not(:nth-child(2)) {
   margin-left: 72px;
 }
 
@@ -261,6 +260,7 @@ header {
     margin-right: 32px;
   }
   .section-img {
+    padding-left: 32px;
     overflow-x: scroll;
   }
   .section-learnMore {
@@ -295,7 +295,10 @@ header {
     font-size: 14px;
   }
   .section-img img {
-    width: 300px;
+    width: 260px;
+  }
+  .section-img img:not(:first-child) {
+    margin-left: 20px;
   }
   .section-learnMore {
     padding: 60px 32px 400px;
