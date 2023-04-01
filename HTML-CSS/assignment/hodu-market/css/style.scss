@@ -216,7 +216,7 @@ header {
     }
 }
 
-.section-middleText {
+.section-detail {
     // max-width: 1280px;
     margin: auto;
     text-align: center;
@@ -230,25 +230,27 @@ header {
         font-size: 16px;
         max-width: 740px;
         margin: auto;
+        padding-bottom: 88px;
     }
     strong {
         color: $main-color;
     }
+    .list-img {
+        max-width: 1300px;
+        margin: auto;
+        white-space: nowrap;
+        overflow: visible;
+        padding: 32px 0px;
+        display: flex;
+        img {
+            @include img-deco;
+        }
+        li:not(:first-child) {
+            margin-left: 72px;
+        }
+    }
 }
 
-.section-img {
-    max-width: 1300px;
-    margin: auto;
-    white-space: nowrap;
-    overflow: visible;
-    padding: 32px 0px;
-    img {
-        @include img-deco;
-    }
-    img:not(:nth-child(2)) {
-        margin-left: 72px;
-    }
-}
 
 .section-learnMore {
     max-width: 1280px;
@@ -256,7 +258,7 @@ header {
     display: flex;
     justify-content: center;
     gap: 50px;
-    padding: 60px 20px 200px;
+    padding: 20px 20px 200px;
     p {
         font-size: 16px;
         max-width: 740px;
@@ -277,7 +279,7 @@ header {
             margin-right: 32px;
         }
     }
-    .section-img {
+    .list-img {
         padding-left: 32px;
         overflow-x: scroll;
     }
@@ -304,7 +306,7 @@ header {
             font-size: 14px;
         }
     }
-    .section-middleText {
+    .section-detail {
         padding: 60px 32px 40px;
         h3 {
             font-size: 24px;
@@ -312,16 +314,15 @@ header {
         p {
             font-size: 14px;
         }
-        
+        .list-img {
+            img {
+                width: 260px;
+            }
+            img:not(:first-child) {
+                margin-left: 20px;
+            }
+        }
     } 
-    .section-img {
-        img {
-            width: 260px;
-        }
-        img:not(:first-child) {
-            margin-left: 20px;
-        }
-    }
     .section-learnMore {
         padding: 60px 32px 400px;
         flex-direction: column;

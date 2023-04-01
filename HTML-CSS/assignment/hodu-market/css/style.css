@@ -198,37 +198,38 @@ header {
   font-size: 16px;
 }
 
-.section-middleText {
+.section-detail {
   margin: auto;
   text-align: center;
   padding: 80px 20px;
 }
-.section-middleText h3 {
+.section-detail h3 {
   font-size: 48px;
   color: #D97652;
   margin-bottom: 30px;
 }
-.section-middleText p {
+.section-detail p {
   font-size: 16px;
   max-width: 740px;
   margin: auto;
+  padding-bottom: 88px;
 }
-.section-middleText strong {
+.section-detail strong {
   color: #D97652;
 }
-
-.section-img {
+.section-detail .list-img {
   max-width: 1300px;
   margin: auto;
   white-space: nowrap;
   overflow: visible;
   padding: 32px 0px;
+  display: flex;
 }
-.section-img img {
+.section-detail .list-img img {
   border-radius: 30px;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
 }
-.section-img img:not(:nth-child(2)) {
+.section-detail .list-img li:not(:first-child) {
   margin-left: 72px;
 }
 
@@ -238,7 +239,7 @@ header {
   display: flex;
   justify-content: center;
   gap: 50px;
-  padding: 60px 20px 200px;
+  padding: 20px 20px 200px;
 }
 .section-learnMore p {
   font-size: 16px;
@@ -259,7 +260,7 @@ header {
     width: 60%;
     margin-right: 32px;
   }
-  .section-img {
+  .list-img {
     padding-left: 32px;
     overflow-x: scroll;
   }
@@ -285,19 +286,19 @@ header {
   .section-introduce p {
     font-size: 14px;
   }
-  .section-middleText {
+  .section-detail {
     padding: 60px 32px 40px;
   }
-  .section-middleText h3 {
+  .section-detail h3 {
     font-size: 24px;
   }
-  .section-middleText p {
+  .section-detail p {
     font-size: 14px;
   }
-  .section-img img {
+  .section-detail .list-img img {
     width: 260px;
   }
-  .section-img img:not(:first-child) {
+  .section-detail .list-img img:not(:first-child) {
     margin-left: 20px;
   }
   .section-learnMore {
