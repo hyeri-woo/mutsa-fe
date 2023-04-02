@@ -1,6 +1,7 @@
 // modal controller
 const targetModal = document.querySelector(".modal-wrapper");
-document.querySelector('.form-subscribe .btn-subscribe').addEventListener('click', (e) => {
+document.querySelector('.form-subscribe').addEventListener('submit', (e) => {
+    e.preventDefault()
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
     document.querySelector(".input-email").value = null;
@@ -28,12 +29,18 @@ function toggleNav() {
 }
 
 // download button
-const targetBtn = document.querySelectorAll(".btn-download");
-for(let i=0; i<targetBtn.length; i++) {
-    targetBtn[i].addEventListener("click", (e) => {
+const downloadBtn = document.querySelectorAll(".btn-download");
+for(let i=0; i<downloadBtn.length; i++) {
+    downloadBtn[i].addEventListener("click", (e) => {
         alert("Nothing to download! Sorry!");
     });
 }
+
+// learnMore butotn
+document.querySelector(".btn-learnMore").addEventListener('click', (e) => {
+    alert("More Hodu will be updated soon!");
+});
+
 
 // scroll top button 
 document.querySelector(".btn-scroll").addEventListener('click', (e) => {
