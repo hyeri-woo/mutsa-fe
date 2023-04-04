@@ -405,18 +405,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 240px;
-}
-.article-subscribe:before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100vw;
-  height: 340px;
-  left: 0;
-  background: url(../img/cat-bg.png) no-repeat center/cover;
-  transform: translateY(170px);
-  z-index: -1;
 }
 .article-subscribe .text-wrapper {
   max-width: 490px;
@@ -462,7 +450,6 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    margin-bottom: 200px;
   }
   .article-subscribe .form-subscribe {
     width: 100%;
@@ -475,10 +462,6 @@ header {
 @media (max-width: 757px) {
   .article-subscribe {
     border-radius: 18px;
-    margin-bottom: 130px;
-  }
-  .article-subscribe:before {
-    height: 240px;
   }
   .article-subscribe .text-wrapper h3 {
     font-size: 24px;
@@ -513,6 +496,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin: auto;
+  margin-top: 240px;
 }
 footer .sns-wrapper {
   width: 100%;
@@ -537,15 +521,34 @@ footer .list-footer {
   font-size: 14px;
   color: #767676;
 }
+footer:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: 340px;
+  left: 0;
+  background: url(../img/cat-bg.png) no-repeat center/cover;
+  transform: translateY(-250px);
+  z-index: -1;
+}
 
 /* ------------------------------- footer-media */
 @media (max-width: 1279px) {
   footer {
     padding-left: 20px;
     padding-right: 20px;
+    margin-top: 200px;
   }
 }
 @media (max-width: 757px) {
+  footer {
+    margin-top: 150px;
+  }
+  footer:before {
+    height: 240px;
+    transform: translateY(-240px);
+  }
   footer .sns-wrapper {
     flex-direction: column;
     gap: 58px;

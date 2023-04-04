@@ -420,18 +420,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 240px;
-    &:before {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 100vw;
-        height: 340px;
-        left: 0;
-        background: url(../img/cat-bg.png) no-repeat center / cover;
-        transform: translateY(170px);
-        z-index: -1;
-    }
     .text-wrapper {
         max-width: 490px;
     }
@@ -477,7 +465,6 @@ header {
         flex-wrap: wrap;
         justify-content: center;
         gap: 30px;
-        margin-bottom: 200px;
         .form-subscribe {
             width: 100%;
             text-align: center;
@@ -491,10 +478,6 @@ header {
 @include mobile {
     .article-subscribe {
         border-radius: 18px;
-        margin-bottom: 130px;
-        &:before {
-            height: 240px;
-        }
         .text-wrapper {
             h3 {
                 font-size: 24px;
@@ -533,6 +516,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin: auto;
+    margin-top: 240px;
     .sns-wrapper {
         width: 100%;
         display: flex;
@@ -556,6 +540,17 @@ footer {
         font-size: 14px;
         color: #767676;
     }
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100vw;
+        height: 340px;
+        left: 0;
+        background: url(../img/cat-bg.png) no-repeat center / cover;
+        transform: translateY(-250px);
+        z-index: -1;
+    }
 }
 
 /* ------------------------------- footer-media */
@@ -563,11 +558,17 @@ footer {
     footer {
         padding-left: 20px;
         padding-right: 20px;
+        margin-top: 200px;
     }
 }
 
 @include mobile {
     footer {
+        margin-top: 150px;
+        &:before {
+            height: 240px;
+            transform: translateY(-240px);
+        }
         .sns-wrapper {
             flex-direction: column;
             gap: 58px;
