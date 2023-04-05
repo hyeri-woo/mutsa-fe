@@ -8,14 +8,22 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <div class="div-container">
+    <div class="login-wrapper">
+        <section class="section-login">
+            <h1><img src="./img/logo.svg" alt="위니브"></h1>
+            <p>위니브를 더 즐겁고 편리하게 이용하세요.</p>
+            <button type="button">로그인</button>
+        </section>
+    </div>
+    <!-- article: modal -->
+    <article class="article-modal on">
         <!-- header -->
         <header>
-            <h1>로그인 또는 회원가입</h1>
+            <h2>로그인 또는 회원가입</h2>
             <button class="btn-close" type="button"><img src="./img/icon-close.svg" alt="로그인 창 닫기 버튼"></button>
         </header>
-        <!-- main -->
-        <main>
+        <!--  -->
+        <div>
             <section class="section-directLogin">
                 <h2 class="a11y-hidden">위니브를 통해 직접 로그인</h2>
                 <p class="p-title">위니브에서 여러분의 궁금증을 해결하세요! :&#41;</p>
@@ -58,7 +66,23 @@
                     </li>
                 </ul>
             </section>
-        </main>
-    </div>
+        </div>
+    </article>
+    <script>
+        const btnLogin = document.querySelector(".section-login button");
+        const modal = document.querySelector(".article-modal");
+        const btnClose = document.querySelector(".article-modal .btn-close");
+
+        function onLoginClick() {
+            modal.classList.toggle("on");
+        }
+
+        function onCloseClick() {
+            modal.classList.toggle("on");
+        }
+
+        btnLogin.addEventListener("click", onLoginClick);
+        btnClose.addEventListener("click", onCloseClick);
+    </script>
 </body>
 </html>

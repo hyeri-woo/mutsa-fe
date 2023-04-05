@@ -47,22 +47,81 @@ a {
     text-decoration: none;
 }
 
+body {
+    background: #F2F2F2;
+}
 
-.div-container {
+/* section: login */
+.login-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.section-login {
+    width: 500px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    text-align: center;
+    padding: 40px 30px 30px;
+    background: white;
+}
+
+.section-login h1 {
+    margin-bottom: 36px;
+}
+
+.section-login p {
+    margin-bottom: 32px;
+}
+
+.section-login button {
+    width: 100%;
+    background: #2F80ED;
+    padding: 16px;
+    font-size: 22px;
+    color: white;
+    border-radius: 5px;
+}
+
+
+/* article: modal */
+.article-modal {
+    display: none;
     width: 520px;
-    margin: 100px auto;
+    margin: 200px auto;
     background: white;
     border: 1px solid var(--border-color);
     border-radius: 10px;
+    /* z-index: 10; */
 }
 
-header {
+.article-modal::before {
+    display: block;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: .7;
+    z-index: -1;
+}
+
+.article-modal.on {
+    display: block;
+}
+
+.article-modal header {
     position: relative;
     padding: 20px 0 18px;
     border-bottom: 1px solid var(--border-color);
 }
 
-h1 {
+.article-modal h2 {
     font-size: 16px;
     font-weight: 500;
     text-align: center; 
@@ -211,20 +270,64 @@ h1 {
 
 .btn-google {
     border: 1px solid #767676;
-    background: url(./img/icon-google.svg) no-repeat 15px 14px;
+    position: relative;
+}
+
+.btn-google:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    left: 14px;
+    width: 22px;
+    height: 22px;
+    background: url(./img/sns-retina.png) no-repeat -37px -5px / 86px 63px;
 }
 
 .btn-facebook {
     border: 1px solid #2D9CDB;
-    background: url(./img/icon-facebook.svg) no-repeat 19px 13px;
+    position: relative;
+}
+
+.btn-facebook:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 13px;
+    left: 14px;
+    width: 13px; 
+    height: 24px;
+    background: url(./img/sns-retina.png) no-repeat -68px -5px/ 86px 63px;
 }
 
 .btn-naver {
     border: 1px solid #00BF18;
-    background: url(./img/icon-naver.svg) no-repeat 15px 14px;
+    position: relative;
+}
+
+.btn-naver:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 13px;
+    left: 14px;
+    width: 22px;
+    height: 22px;
+    background: url(./img/sns-retina.png) no-repeat -5px -5px / 86px 63px;;
 }
 
 .btn-kakao {
     border: 1px solid #F2C94C;
-    background: url(./img/icon-kakao.svg) no-repeat 15px 14px;
+    position: relative;
+}
+
+.btn-kakao:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    left: 14px;
+    width: 22px;
+    height: 22px;
+    background: url(./img/sns-retina.png) no-repeat -5px -37px / 86px 63px;;
 }
