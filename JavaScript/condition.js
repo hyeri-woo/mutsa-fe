@@ -29,3 +29,64 @@ console.log(score >= 90 ? "A" :
             (score >= 70 ? "C" : 
             (score >= 60 ? "D" : "강해져서 돌아와라"))));
 
+/* -------------- switch */
+const value3 = "four";
+switch(value3) {
+    case 'one':
+        console.log("one");
+        break;
+    case 'two':
+        console.log("two");
+        break;
+    case 'three':
+        console.log("three");
+        break;
+    case 'four':
+        console.log("four");
+        break;
+}
+
+// 여러줄 복사하고 싶을 때에 Alt + Shift + 위 아래
+// 같은 단어 찾고 싶을 때 Ctrl + D
+// 같은 모든 단어 Ctril + Shift + 1
+// 자동정렬 cmd + a, cmd k + f
+// 전체 줄 선택: shift + cmd + ㅣㄷㄹㅅ
+switch(new Date().getDay()) {
+    case 0:
+        console.log("일요일");
+        break;
+    case 1:
+        console.log("월요일");
+        break;
+    case 2:
+        console.log("화요일");
+        break;
+    case 3:
+        console.log("수요일");
+        break;
+    case 4:
+        console.log("목요일");
+        break;
+    case 5:
+        console.log("금요일");
+        break;
+    case 6:
+        console.log("토요일");
+        break;
+}
+
+// switch 대신 사용할 수 있다
+const week = new Date().getDay();
+const weekObject = {
+    0: "Sunday",
+    1: "Monday",
+    2: "Tuesday",
+    3: "Wednesday",
+    4: "Thursday",
+    5: "Friday",
+    6: "Saturday",
+}
+
+// default는 단락평가나 nullish 연산자 사용
+console.log(weekObject(week) ?? "no week");
+console.log(weekObject(week) || "no week");
