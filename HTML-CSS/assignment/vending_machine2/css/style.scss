@@ -5,6 +5,8 @@ $main-dark-color: #32157b;
 $text-color: #333333;
 $border-color: #BDBDBD;
 
+@import "media";
+
 /* common */
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
@@ -45,6 +47,7 @@ button {
     background: none;
     border: none;
     box-shadow: none;
+    cursor: pointer;
 }
 
 body {
@@ -56,12 +59,9 @@ header {
     text-align: center;
     margin-bottom: 67px;
     img {
-        width: 386px;
+        max-width: 386px;
     }
 }
-
-/* ------------------------------- header (media) */
-
 
 
 /* ------------------------------- main */
@@ -95,6 +95,12 @@ main {
     }
     button.active {
         box-shadow: $main-color 0px 0px 0px 3px;
+    }
+    // NEED TO WORK: soldout은 클릭할 수 없도록 처리
+    button:not(.soldout, .active):hover {
+        // box-shadow: $main-color 0px 0px 0px 3px;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: all 0.3s;
     }
     img {
         margin-bottom: 6px;
@@ -146,7 +152,7 @@ main {
         font-size: 13px;
         border-radius: 5px;
     }
-    .left-over {
+    .inserted {
         background: $bg-color;
         padding: 5px 10px;
         font-size: 14px;
@@ -154,6 +160,10 @@ main {
     & > button {
         border: 1px solid $border-color;
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    }
+    & > button:hover {
+        box-shadow: $main-color 0px 0px 0px 3px;
+        transition: box-shadow 0.3s;
     }
     .input-payment {
         border: 1px solid $border-color;
@@ -217,16 +227,13 @@ main {
     }
 }
 
-/* ------------------------------- section: vending (media) */
-
-
 /* ------------------------------- section: reciept */
 .section-reciept {
     height: 100%;
     & > * {
         background: white;
     }
-    .ready-money {
+    .possessed {
         
         padding: 9px 27px;
         margin-bottom: 20px;
@@ -281,4 +288,22 @@ main {
     }
 }
 
-/* ------------------------------- section: reciept (media) */
+/* ------------------------------- media-mobile */
+@include mobile {
+    body {
+        background: white;
+    }
+    header {
+        margin-bottom: 18px;
+        img {
+            width: 166px;
+        }
+    }
+    main {
+        flex-direction: column;
+        width: 360px;
+        .gain-wrapper {
+            padding-bottom: 69px;
+        }
+    }
+}

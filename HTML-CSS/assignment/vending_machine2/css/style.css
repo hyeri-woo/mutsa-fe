@@ -51,10 +51,9 @@ header {
   margin-bottom: 67px;
 }
 header img {
-  width: 386px;
+  max-width: 386px;
 }
 
-/* ------------------------------- header (media) */
 /* ------------------------------- main */
 main {
   width: 750px;
@@ -87,6 +86,10 @@ main section {
 }
 .list-drink button.active {
   box-shadow: #6327FE 0px 0px 0px 3px;
+}
+.list-drink button:not(.soldout, .active):hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
 }
 .list-drink img {
   margin-bottom: 6px;
@@ -138,7 +141,7 @@ main section {
   font-size: 13px;
   border-radius: 5px;
 }
-.counter-wrapper .left-over {
+.counter-wrapper .inserted {
   background: #EAE8FE;
   padding: 5px 10px;
   font-size: 14px;
@@ -146,6 +149,10 @@ main section {
 .counter-wrapper > button {
   border: 1px solid #BDBDBD;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+.counter-wrapper > button:hover {
+  box-shadow: #6327FE 0px 0px 0px 3px;
+  transition: box-shadow 0.3s;
 }
 .counter-wrapper .input-payment {
   border: 1px solid #BDBDBD;
@@ -212,7 +219,6 @@ main section {
   color: white;
 }
 
-/* ------------------------------- section: vending (media) */
 /* ------------------------------- section: reciept */
 .section-reciept {
   height: 100%;
@@ -220,19 +226,19 @@ main section {
 .section-reciept > * {
   background: white;
 }
-.section-reciept .ready-money {
+.section-reciept .possessed {
   padding: 9px 27px;
   margin-bottom: 20px;
 }
-.section-reciept .ready-money * {
+.section-reciept .possessed * {
   font-size: 14px;
 }
-.section-reciept .ready-money p {
+.section-reciept .possessed p {
   background: #EAE8FE;
   padding: 6px 10px;
   border-radius: 5px;
 }
-.section-reciept .ready-money span {
+.section-reciept .possessed span {
   float: right;
   font-weight: 700;
 }
@@ -273,4 +279,22 @@ main section {
   font-size: 12px;
 }
 
-/* ------------------------------- section: reciept (media) *//*# sourceMappingURL=style.css.map */
+/* ------------------------------- media-mobile */
+@media (max-width: 749px) {
+  body {
+    background: white;
+  }
+  header {
+    margin-bottom: 18px;
+  }
+  header img {
+    width: 166px;
+  }
+  main {
+    flex-direction: column;
+    width: 360px;
+  }
+  main .gain-wrapper {
+    padding-bottom: 69px;
+  }
+}/*# sourceMappingURL=style.css.map */
