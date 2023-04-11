@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <p>hello</p>
+    <p>hello</p>
+    <p id="myTxt">hello</p>
+    <p class="txt1">hello</p>
+    <p class="txt1">hello</p>
+    <article id="container">
+        <ul>
+            <li>탕수육</li>
+            <li class="item-second">유산슬</li>
+            <li>짜장면</li>
+        </ul>
+    </article>
+    <article>
+        <ul>
+            <li>된장국</li>
+            <li class="item-second">김치국</li>
+            <li>해장국</li>
+        </ul>
+    </article>
+    <script>
+        console.log(document.getElementById("myTxt"));
+        console.log(document.getElementsByTagName("p"));
+        console.log(document.getElementsByClassName("txt1"));
+        console.log(document.getElementsByClassName("item-second")[0]);
+    </script>
+</body>
+</html>

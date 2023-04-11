@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .canvas {
+            width: 600px;
+            height: 600px;
+            margin: auto;
+            background-color: black;
+        }
+        .red {
+            background-color: red;
+        }
+        .yellow {
+            background-color: yellow;
+        }
+        .green {
+            background-color: green;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .list-btn {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            width: 600px;
+            margin: 20px auto;
+            justify-content: center;
+            gap: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="canvas"></div>
+    <ul class="list-btn">
+        <li><button class="btn-red" type="button">빨강</button></li>
+        <li><button class="btn-yellow" type="button">노랑</button></li>
+        <li><button class="btn-green" type="button">초록</button></li>
+        <li><button class="btn-blue" type="button">파랑</button></li>
+        
+    </ul>
+    <script>
+        const colors = ["red", "yellow", "green", "blue"];
+        const canvas = document.querySelector(".canvas");
+        const btnColor = document.querySelectorAll("button");
+
+        btnColor.forEach((v, i) => {
+            btnColor[i].addEventListener("click", function(){
+                // colors.forEach(item => canvas.classList.remove(item));
+                canvas.classList.remove(...colors);
+                canvas.classList.add(colors[i]);
+            });
+        })
+        // for(let i=0; i<btnColor.length; i++) {
+        //     btnColor[i].addEventListener("click", function(){
+        //         colors.forEach(item => canvas.classList.remove(item));
+        //         canvas.classList.add(colors[i]);
+        //     });
+        // }
+
+    </script>
+</body>
+</html>
