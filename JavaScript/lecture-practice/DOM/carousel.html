@@ -11,7 +11,7 @@
     <article id="app">
         <h2>포켓몬 캐러셀</h2>
         <ul class="list-item">
-            <li><img src="https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/jammanbo.png" alt=""></li>
+            <!-- <li><img src="https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/jammanbo.png" alt=""></li>
             <li><img src="https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/ev.png?raw=true" alt="">
             </li>
             <li><img src="https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/mazayoung.png?raw=true" alt="">
@@ -19,31 +19,9 @@
             <li><img src="https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/mobugi.png" alt=""></li>
             <li><img src="https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/nyaong.png" alt=""></li>
             <li><img src="https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/pulin.png" alt=""></li>
-            <li><img src="https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/weirdseed.png" alt=""></li>
+            <li><img src="https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/weirdseed.png" alt=""></li> -->
         </ul>
-        <button class="btn-prev" type="button"></button>
-        <button class="btn-next" type="button"></button>
     </article>
-    <script>
-        const list = document.querySelector(".list-item");
-        const btnPrev = document.querySelector(".btn-prev");
-        const btnNext = document.querySelector(".btn-next");
-        let deg = 0;
-        btnPrev.addEventListener("click" , (e) => {
-            deg += 5;
-            if(deg >= 360) {
-                deg = 0;
-            }
-            list.style.transform = `translate(-50%, -50%) rotateY(${deg}deg)`;
-        })
-        btnNext.addEventListener("click" , (e) => {
-            deg -= 5;
-            if(deg >= 360) {
-                deg = 0;
-            }
-            list.style.transform = `translate(-50%, -50%) rotateY(${deg}deg)`;
-        })
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
