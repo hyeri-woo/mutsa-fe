@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일기쓰기 | 두근두근 비밀일기</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+    <link rel="canonical" href="https://example.com/"/>
+    <meta name="description" content="나만의 설레는 비밀일기를 작성해보세요!">
+    <meta property="og:title" content="두근두근 비밀일기" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="페이지 주소" />
+    <meta property="og:image" content="./img/logo.svg" />
+    <meta property="og:description" content="나만의 설레는 비밀일기를 작성해보세요!" />
+
+    <meta name="twitter:card" content="twitter:card">
+    <meta property="twitter:title" content="두근두근 비밀일기" />
+    <meta property="twitter:url" content="페이지 주소" />
+    <meta property="twitter:image" content="./img/logo.svg" />
+    <meta property="twitter:description" content="페이지 설명" />
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="header-wrap">
+            <h1>
+                <a href="main.html" class="btn-logo"><img src="./img/logo.svg" alt="두근두근 비밀일기 로고"></a>
+            </h1>
+            <div>
+                <p class="welcome">환영합니다 <strong>홍길동</strong>님!</p>
+                <a href="join.html" class="btn-logout">로그아웃</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <!-- main -->
+        <main>
+            <h2 class="heart"><time datetime=""></time>의 비밀일기</h2>
+            <form>
+                <label class="a11y-hidden" for="diary-title">일기 제목</label>
+                <input class="input-style" type="text" id="diary-title" placeholder="제목" required>
+
+                <label class="a11y-hidden" for="diary-content">일기 내용</label>
+                <textarea class="diary-textarea" minlength="10" maxlength="100" placeholder="오늘의 비밀은 무엇인가요?"></textarea>
+                <button class="black-btn" type="submit">작성하기</button>
+            </form>
+        </main>
+        <!-- section: 일기 목록 -->
+        <section>
+            <h2 class="a11y-hidden">일기 목록</h2>
+            <ul class="list-diary">
+            </ul>
+        </section>
+    </div>
+    <div class="modal-wrapper">
+        <article class="modal-edit">
+            <label class="a11y-hidden" for="diary-title">일기 제목</label>
+            <input class="input-style" type="text" id="diary-title" placeholder="제목" required>
+
+            <label class="a11y-hidden" for="diary-content">일기 내용</label>
+            <textarea class="diary-textarea" minlength="10" maxlength="100" placeholder="오늘의 비밀은 무엇인가요?"></textarea>
+            <button class="black-btn" type="submit">수정하기</button>
+        </article>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
