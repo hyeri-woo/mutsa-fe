@@ -81,6 +81,7 @@ function render() {
             }
         });
 
+        // edit 해주는 기능 추가
         btnEdit.addEventListener("click", () => {
             modal.classList.add("on");
             const changeTitle = modal.querySelector("#diary-title");
