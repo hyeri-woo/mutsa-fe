@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function Header() {
+            const navList = [];
+            for(let i=1; i<6; i++) {
+                navList.push(
+                    <li>링크{i}</li>
+                )
+            }
+            return (
+                <header>
+                    <h1>hello world shop</h1>
+                    <nav>
+                        <ul>
+                            {navList}
+                        </ul>
+                    </nav>
+                </header>
+            );
+        } 
+
+        function Main() {
+            const productList = [];
+            for(let i=1; i<11; i++) {
+                productList.push(
+                    <li>best seller 옷{i}</li>
+                )
+            }
+            return (
+                <main>
+                    <h2>hello world!</h2>
+                    <p> product list </p>
+                    <ul>
+                        {productList}
+                    </ul>
+                </main>
+            );
+        }  
+
+        function Footer() {
+            return (
+                <footer>
+                    <h2>hello footer!</h2>
+                    <address>제주시 인다 1길</address>
+                </footer>
+            );
+        } 
+
+
+        // JSX에서 코드의 개행이 필요할 경우 소괄호를 사용하여 묶습니다.
+        const body = (
+            <div>
+                <Header/>
+                <Main/>
+                <Footer/>
+            </div>
+        );
+
+        const domContainer = document.querySelector('#root');
+				// ReactDOM.createRoot 함수는 React 18부터 도입된 함수로, React 애플리케이션에서 루트 노드를 만들고, 그 루트 노드를 기반으로 리액트 앱을 렌더링하는 데 사용됩니다.
+        const root = ReactDOM.createRoot(domContainer);
+        root.render(body);
+    </script>
+</body>
+
+</html>
