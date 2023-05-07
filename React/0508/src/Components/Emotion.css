@@ -1,0 +1,56 @@
+button, ul, li, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+button {
+    background: none;
+    border: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.feeling-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    padding-top: 50px;
+}
+
+.list-feeling button {
+    background-color: #e6e6e6;
+    width: 300px;
+    height: 60px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+.list-feeling button:hover {
+    background-color: lightblue;
+    color: white;
+}
+
+.list-feeling button.active {
+    background-color: royalblue;
+    color: white;
+}
+
+.display-emotion {
+    font-size: 25px;
+    font-weight: bold;
+    width: 300px;
+    height: 300px;
+    border: 3px solid black;
+    border-radius: 5px;
+    text-align: center;
+    padding: 130px 0;
+    box-sizing: border-box;
+}
