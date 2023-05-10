@@ -1,0 +1,4 @@
+.event-form label, 
+.event-form input {
+    display: block;
+}
