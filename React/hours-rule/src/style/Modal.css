@@ -1,0 +1,86 @@
+:root {
+    --purple-color: #5B2386;
+    --yellow-color: #F5DF4D;
+}
+
+@font-face {
+    font-family: 'OTEnjoystoriesBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.modal {
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.modal h3 {
+    color: var(--purple-color);
+    font-size: 96px;
+    font-family: 'OTEnjoystoriesBA';
+}
+
+.modal p {
+    color: var(--purple-color);
+    font-size: 36px;
+    font-family: 'OTEnjoystoriesBA';
+}
+
+.modal button {
+    background: var(--yellow-color);
+    color: var(--purple-color);
+    font-family: 'GmarketSansMedium';
+    font-size: 24px;
+    padding: 21px 49px;
+    border-radius: 56px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 800px) {
+    .modal {
+        width: 350px;
+    }
+    .modal h3 {
+        font-size: 64px;
+    }
+    .modal img {
+        width: 100%;
+    }
+    .modal button {
+        font-size: 14px;
+        border-radius: 13px;
+        margin-top: 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+}

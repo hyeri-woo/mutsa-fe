@@ -1,0 +1,290 @@
+:root {
+    --purple-color: #5B2386;
+    --yellow-color: #F5DF4D;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'GmarketSansMedium';
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+input {
+    background: none;
+    border: none;
+}
+
+@font-face {
+    font-family: 'OTEnjoystoriesBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background: var(--purple-color);
+}
+
+
+/* ------------------------------ header */
+header {
+    margin: auto;
+    padding: 70px 0 0;
+    min-width: 390px;
+}
+
+header h1 {
+    padding: 125px 0;
+    text-align: center;
+    background: url("../img/clock.png") no-repeat center center / 225px;
+}
+
+header img {
+    width: 530px;
+}
+
+header h2 {
+    padding-bottom: 78px;
+    text-align: center;
+    color: var(--yellow-color);
+    font-family: 'OTEnjoystoriesBA';
+    font-size: 36px;
+    font-weight: 700;
+}
+
+header p {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    background: url("../img/quotes.png") no-repeat top 20px center;
+    line-height: 35px;
+}
+
+header p strong {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* ------------------------------ media-query: header */
+@media (max-width: 800px) {
+    header {
+        padding-top: 5px;
+    }
+    header h1 { 
+        background-size: 125px;
+        padding: 70px 0;
+    }
+    header img {
+        width: 267px;
+    }
+    header h2 {
+        font-size: 22px;
+    }
+    header p {
+        background-size: 350px;
+        background-position: top 35px center;
+    }
+    header p, header p strong {
+        font-size: 16px;
+    }
+}
+
+/* ------------------------------ main */
+main {
+    min-width: 390px;
+}
+main button {
+    color: var(--purple-color);
+    padding: 21px 49px;
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 56px;
+}
+
+.btn-result, .btn-go {
+    background: var(--yellow-color);
+}
+
+.btn-result:hover, .btn-go:hover {
+    background: white;
+}
+
+section {
+    text-align: center;
+}
+
+/* ------------------------------ section-form */
+.section-form {
+    padding-top: 102px;
+    color: white;
+    font-size: 24px;
+}
+
+.section-form input {
+    background-color: white;
+    color: var(--purple-color);
+    border-radius: 7px;
+    padding: 17px 40px;
+    font-size: 24px;
+    text-align: center;
+    width: 228px;
+    margin: 13px 17px;
+}
+
+.section-form input::placeholder {
+    color: #BABCBE;
+}
+
+.section-form p {
+    display: inline;
+}
+
+.btn-result {
+    position: relative;
+    margin-top: 115px;
+}
+
+.btn-result:after {
+    content: "";
+    display: inline-block;
+    background: url("../img/click.png") no-repeat 0 0 / cover;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: -50px;
+    bottom: -10px;
+}
+
+/* ------------------------------ media-query: section-form */
+@media (max-width: 800px) {
+    .section-form {
+        font-size: 14px;
+        padding-top: 62px;
+    }
+    .section-form p {
+        display: block;
+    }
+    .section-form input {
+        font-size: 14px;
+        width: 156px;
+        padding: 10px 35px;
+        margin: 17px 7px;
+    }
+    .btn-result {
+        width: 241px;
+        font-size: 14px;
+        padding: 18px 36px;
+        border-radius: 13px;
+        margin-top: 49px;
+    }
+}
+
+/* ------------------------------ section-result */
+.section-result {
+    color: white;
+    padding-top: 147px;
+}
+
+.section-result .result-wrapper {
+    font-size: 24px;
+}
+
+.result-wrapper p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-result strong {
+    font-weight: 700;
+    font-size: 72px;
+    padding: 0 12px;
+}
+
+.section-result .btn-wrapper {
+    margin-top: 127px;
+}
+
+.btn-go {
+    margin-right: 18px;
+}
+
+.btn-share {
+    background: white;
+}
+
+/* ------------------------------ media-query: section-result */
+@media (max-width: 800px) {
+    .section-result {
+        padding-top: 64px;
+    }
+    .section-result .result-wrapper {
+        font-size: 14px;
+    }
+    .section-result strong {
+        font-size: 24px;
+    }
+    .section-result .btn-wrapper {
+        margin-top: 55px;
+    }
+    .btn-go, .btn-share {
+        padding: 13px 17px;
+        font-size: 14px;
+    }
+    .btn-go {
+        margin-right: 13px;
+    }
+}
+
+/* ------------------------------ footer */
+footer {
+    padding: 130px 0 50px;
+    text-align: center;
+}
+
+footer p {
+    color: white;
+    font-family: 'Noto Sans KR';
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+@media (max-width: 800px) {
+    footer {
+        padding: 83px 0 30px; 
+    }
+    footer img {
+        width: 91px;
+    }
+    footer p {
+        font-size: 9px;
+        margin-top: 17px;
+    }
+}
+

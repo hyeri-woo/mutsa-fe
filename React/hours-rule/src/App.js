@@ -1,12 +1,14 @@
-import { Fragment } from "react";
-import Landing from "./Landing.jsx"
-import './Landing.css';
+import Landing from "./components/Landing.jsx";
+import Modal from "./components/Modal.jsx";
+import { useState } from "react";
 
 function App() {
+  const [showModal, setModal] = useState(false);
   return (
-    <Fragment>
-      <Landing/>
-    </Fragment>
+    <>
+      <Landing onModalClick={setModal}/>
+      {showModal && <Modal onModalClick={setModal}/>}
+    </>
   );
 }
 export default App;
