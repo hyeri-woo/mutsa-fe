@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
+import './Form.css'
 
-export default function Form({setData}) {
+export default function Form({setData, submitTrue}) {
     const [subject, setSubject] = useState("");
     const [time, setTime] = useState("");
     const resetForm = () => {
@@ -15,8 +16,11 @@ export default function Form({setData}) {
             alert("전문가가 되고 싶은 분야를 작성해주세요!");
         } else if (time === "") {
             alert("훈련시간를 작성해주세요!");
+        } else if (parseInt(time) > 24) {
+            alert("하루는 24시간입니다!")
         } else {
             setData({subject:subject, time:time});
+            submitTrue();
             resetForm();
         }
     }

@@ -1,9 +1,7 @@
 import React from 'react'
+import './Result.css'
 
-export default function Result({onModalClick, data}) {
-    const openModal = () => {
-        onModalClick(true);
-    }
+export default function Result({openModal, data}) {
     const timeCalc = (parseInt(data.time) ? Math.ceil(10000/parseInt(data.time)) : "0");
     return (
         <section className="section-result">

@@ -1,0 +1,65 @@
+/* ------------------------------ section-form */
+.section-form {
+    padding-top: 102px;
+    color: white;
+    font-size: 24px;
+}
+
+.section-form input {
+    background-color: white;
+    color: var(--purple-color);
+    border-radius: 7px;
+    padding: 17px 40px;
+    font-size: 24px;
+    text-align: center;
+    width: 228px;
+    margin: 13px 17px;
+}
+
+.section-form input::placeholder {
+    color: #BABCBE;
+}
+
+.section-form p {
+    display: inline;
+}
+
+.btn-result {
+    position: relative;
+    margin-top: 115px;
+}
+
+.btn-result:after {
+    content: "";
+    display: inline-block;
+    background: url("../../../img/click.png") no-repeat 0 0 / cover;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: -50px;
+    bottom: -10px;
+}
+
+/* ------------------------------ media-query: section-form */
+@media (max-width: 800px) {
+    .section-form {
+        font-size: 14px;
+        padding-top: 62px;
+    }
+    .section-form p {
+        display: block;
+    }
+    .section-form input {
+        font-size: 14px;
+        width: 156px;
+        padding: 10px 35px;
+        margin: 17px 7px;
+    }
+    .btn-result {
+        width: 241px;
+        font-size: 14px;
+        padding: 18px 36px;
+        border-radius: 13px;
+        margin-top: 49px;
+    }
+}

@@ -1,0 +1,23 @@
+/* ------------------------------ main */
+main {
+    min-width: 390px;
+}
+main button {
+    color: var(--purple-color);
+    padding: 21px 49px;
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 56px;
+}
+
+.btn-result, .btn-go {
+    background: var(--yellow-color);
+}
+
+.btn-result:hover, .btn-go:hover {
+    background: white;
+}
+
+section {
+    text-align: center;
+}

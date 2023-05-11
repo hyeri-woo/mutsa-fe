@@ -1,0 +1,62 @@
+/* ------------------------------ header */
+header {
+    margin: auto;
+    padding: 70px 0 0;
+    min-width: 390px;
+}
+
+header h1 {
+    padding: 125px 0;
+    text-align: center;
+    background: url("../../img/clock.png") no-repeat center center / 225px;
+}
+
+header img {
+    width: 530px;
+}
+
+header h2 {
+    padding-bottom: 78px;
+    text-align: center;
+    color: var(--yellow-color);
+    font-family: 'OTEnjoystoriesBA';
+    font-size: 36px;
+    font-weight: 700;
+}
+
+header p {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    background: url("../../img/quotes.png") no-repeat top 20px center;
+    line-height: 35px;
+}
+
+header p strong {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* ------------------------------ media-query: header */
+@media (max-width: 800px) {
+    header {
+        padding-top: 5px;
+    }
+    header h1 { 
+        background-size: 125px;
+        padding: 70px 0;
+    }
+    header img {
+        width: 267px;
+    }
+    header h2 {
+        font-size: 22px;
+    }
+    header p {
+        background-size: 350px;
+        background-position: top 35px center;
+    }
+    header p, header p strong {
+        font-size: 16px;
+    }
+}
