@@ -11,19 +11,22 @@ import { BrowserRouter, Routes, Route, Link, useLocation, Outlet, useParams } fr
 // - **Notice Page :** /users/notice
 // - **User Page :** /users
 function App() {
+    const productIds = [1, 2, 3, 4, 5];
     return (
         <BrowserRouter>
             <Link to="/">Home</Link>
             <Link to="/products">Product</Link>
+            {productIds.map((productId) => (
+                <Link to={`/products/${productId}`}>상품{productId}</Link>
+            ))}
             <Link to="/cart">Cart</Link>
             <Link to="/users">User</Link>
 
             <Routes>
                 <Route path="/" element={<Home />}/>
-                <Route path="/products/*" element={<Outlet />}>
-                    <Route path=":id/*" element={<ProductDetail />}>
-                        <Route path="notice/" element={<ProductNotice/>}/>
-                    </Route>
+                <Route path="/products/*" element={<ProductDetail />}>
+                    <Route path=":id/" element={<ProductDetail />}/>
+                    <Route path=":id/notice/" element={<ProductNotice/>}/>
                 </Route>
                 <Route path="/cart" element={<Cart />}/>
                 <Route path="users/*" element={<Outlet />}>
@@ -49,24 +52,17 @@ function ProductDetail() {
         <>
             <h3>Product {id} Detail</h3>
             <ul>
-                {products.map(item => {
-                    return (
-                        <li key={item}>
-                            <Link to={`/products/${item}`}>product{item}</Link>
-                            
-                        </li>
-                    )
-                })}
+                <Link to="./notice">Notice</Link>
             </ul>
         </>
     )
     return
 }
 function ProductNotice() {
-    // const {id} = useParams();
+    const {id} = useParams();
     console.log(useParams());
     console.log(useLocation());
-    return <h3>Product Notice</h3>
+    return <h3>Product {id} Notice</h3>
 }
 
 // cart
